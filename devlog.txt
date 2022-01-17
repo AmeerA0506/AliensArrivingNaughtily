@@ -13,7 +13,7 @@ pd 6
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+How to use Scanners in order to extract inputs from separate files.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,22 +35,23 @@ tales of wisdom gained...
 
 
 
- ______   ______   __   __   __       ______   _______     
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
-    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 
 
 2022-01-16
 --------------------------------------------------------------
-Nakib Abedin :: Came up with the ideas of a timer and a customizable word bank.
-Ameer Alnasser :: Wrote out the proposal. Came up with the idea of terminal decorations in the library.
-<Member> :: Made the team flag. Came up with the idea of different categories.
+Nakib Abedin :: Came up with the ideas of a timer and a customizable word bank. Helped Woo.java implementation.
+Ameer Alnasser :: Wrote out the proposal. Came up with the idea of terminal decorations in the library. Helped Woo.java implementation.
+Alif Rahman :: Made the team flag. Came up with the idea of different categories. Drove Woo.java implementation.
 ==============================================================
+
 
 yyyy-mm-dd
 --------------------------------------------------------------
@@ -58,4 +59,3 @@ yyyy-mm-dd
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 ==============================================================
-
