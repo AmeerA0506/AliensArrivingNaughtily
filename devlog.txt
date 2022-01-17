@@ -45,9 +45,17 @@ tales of wisdom gained...
 ==============================================================
 
 
+2022-01-16
+--------------------------------------------------------------
+Nakib Abedin :: Came up with the ideas of a timer and a customizable word bank.
+Ameer Alnasser :: Wrote out the proposal. Came up with the idea of terminal decorations in the library.
+<Member> :: Made the team flag. Came up with the idea of different categories.
+==============================================================
+
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 ==============================================================
+
