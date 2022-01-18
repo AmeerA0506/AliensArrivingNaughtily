@@ -48,7 +48,9 @@ tales of wisdom gained...
 
 2022-01-17
 --------------------------------------------------------------
-Nakib Abedin: Created v0 of the code.
+Nakib Abedin :: Created v0 of the code.
+Ameer Alnasser :: Drove v1 of the code.
+Alif Rahman :: added inputs to input.
 
 2022-01-16
 --------------------------------------------------------------

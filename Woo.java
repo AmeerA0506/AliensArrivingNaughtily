@@ -8,31 +8,38 @@ import java.io.*;
 import java.util.*;
 
 public class Woo {
+
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
-   List<Character> current = new ArrayList<Character>();
+  List<Character> current = new ArrayList<Character>();
+
   public String addGuess(){
     int x = (int) (Math.random()*wordBank.size());
     String guess=wordBank.get(x);
     guess=guess.toUpperCase();
+    String output="";
 
-   for(char c:guess.toCharArray()){
-     guessArr.add(c);
-     if(c<=90 &&c>=65){
-       current.add('_');
-     }
-     else{
-       current.add(c);
-     }
-     current.add(' ');
-     guessArr.add(' ');
+    for(char c:guess.toCharArray()){
+       guessArr.add(c);
+       if(c<=90 &&c>=65){
+         current.add('_');
+       }
+       else{
+         current.add(c);
+       }
+       current.add(' ');
+       guessArr.add(' ');
    }
-   String output="";
+
    for(char e: current){
      output+=e;
    }
+
    return output;
   }
+
+
+
   public static void populate(String fileName){
     // populates arrayList WordBankwith inputs from fileName
     try{
@@ -48,7 +55,19 @@ public class Woo {
 
   public static void main(String[] args){
 
+    String initialScreen = "";
+    initialScreen += "_______";
+    initialScreen += "\n|/  |";
+    initialScreen += "\n|  (_)";
+    initialScreen += "\n|  \\|/";
+    initialScreen += "\n|   |";
+    initialScreen += "\n|  / \\";
+    initialScreen += "\n|___|___";
+
+
+
     System.out.println("HANGMAN !!!");
+    System.out.println(initialScreen);
     System.out.println("Select your category: ");
     System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
 
@@ -57,29 +76,43 @@ public class Woo {
     int category = sc.nextInt();
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
-          populate("Places.in");
+          populate("inputs/Places.in");
           break;
       case 1:
-          populate("Celebrities.in");
+          populate("inputs/Celebrities.in");
           break;
       case 2:
-          populate("Movies.in");
+          populate("inputs/Movies.in");
           break;
       case 3:
-          populate("TofrsWords.in");
+          populate("inputs/TofrsWords.in");
           break;
       case 4:
-          populate("Thinkeren.in");
+          populate("inputs/Thinkeren.in");
           break;
       case 5:
-          populate("Quotes.in");
+          populate("inputs/Quotes.in");
           break;
       case 6:
-          System.out.println("Alif likes chicken n");
+          System.out.println("Alif likes chicken nuggets");
           break;
         }
-        System.out.println(game.addGuess());
-            System.out.println(game.current);
 
+    System.out.println(game.wordBank);
+    System.out.println(game.addGuess());
+
+
+    while((game.guessArr.equals(game.current))){
+      System.out.println("Enter your guess: ");
+      Scanner guess = new Scanner(System.in);
+      while(guess.hasNextLine()){
+        char q = guess.next().charAt(0);
+        if(game.guessArr.indexOf(q) > -1){
+          game.current.set(game.guessArr.indexOf(q), game.guessArr.get(q));
+        }else{
+          System.out.println("Alif doesn't like chicken nuggets");
+        }
+      }
+    }
   } // end of main method
 } // end of class

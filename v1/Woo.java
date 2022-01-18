@@ -8,10 +8,12 @@ import java.io.*;
 import java.util.*;
 
 public class Woo {
+
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
-   List<Character> current = new ArrayList<Character>();
-  public String addGuess(){
+  List<Character> current = new ArrayList<Character>();
+
+  public String addWord(){
     int x = (int) (Math.random()*wordBank.size());
     String guess=wordBank.get(x);
     guess=guess.toUpperCase();
@@ -45,7 +47,9 @@ public class Woo {
       System.out.println("input file does not exist within this directory");
     }
   }
+  public static void userGuess(){
 
+  }
   public static void main(String[] args){
 
     System.out.println("HANGMAN !!!");
@@ -75,11 +79,21 @@ public class Woo {
           populate("Quotes.in");
           break;
       case 6:
-          System.out.println("Alif likes chicken n");
+          System.out.println("Alif likes chicken nuggets");
           break;
         }
-        System.out.println(game.addGuess());
-            System.out.println(game.current);
-
+    while(!(game.guessArr.equals(game.current))){
+      System.out.println("Enter your guess: ");
+      Scanner guess = new Scanner(System.in);
+      while(guess.hasNextLine()){
+        char q = guess.next().charAt(0);
+        if(game.guessArr.indexOf(q) > -1){
+          game.current.set(game.guessArr.indexOf(q), game.guessArr.get(q));
+        }else{
+          System.out.println("Alif doesn't like chicken nuggets");
+        }
+      }
+    }
   } // end of main method
+
 } // end of class
