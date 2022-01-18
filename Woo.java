@@ -8,9 +8,31 @@ import java.io.*;
 import java.util.*;
 
 public class Woo {
+  static List<String> wordBank = new ArrayList<String>();
+  List<Character> guessArr = new ArrayList<Character>();
+   List<Character> current = new ArrayList<Character>();
+  public String addGuess(){
+    int x = (int) (Math.random()*wordBank.size());
+    String guess=wordBank.get(x);
+    guess=guess.toUpperCase();
 
-  static ArrayList<String> wordBank = new ArrayList<String>();
-
+   for(char c:guess.toCharArray()){
+     guessArr.add(c);
+     if(c<=90 &&c>=65){
+       current.add('_');
+     }
+     else{
+       current.add(c);
+     }
+     current.add(' ');
+     guessArr.add(' ');
+   }
+   String output="";
+   for(char e: current){
+     output+=e;
+   }
+   return output;
+  }
   public static void populate(String fileName){
     // populates arrayList WordBankwith inputs from fileName
     try{
@@ -31,29 +53,33 @@ public class Woo {
     System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
 
     Scanner sc = new Scanner(System.in);
+    Woo game= new Woo();
     int category = sc.nextInt();
-
-    if (category == 0) {
-      populate("Places.in");
-    }
-    else if (category == 1) {
-      populate("Celebrities.in");
-    }
-    else if (category == 2) {
-      populate("Movies.in");
-    }
-    else if (category == 3) {
-      populate("TofrsWords.in");
-    }
-    else if (category == 4) {
-      populate("Thinkeren.in");
-    }
-    else if (category == 5) {
-      populate("Quotes.in");
-    }
-    else {
-      System.out.println("Alif likes chicken nuggets");
-    }
+    switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
+      case 0:
+          populate("Places.in");
+          break;
+      case 1:
+          populate("Celebrities.in");
+          break;
+      case 2:
+          populate("Movies.in");
+          break;
+      case 3:
+          populate("TofrsWords.in");
+          break;
+      case 4:
+          populate("Thinkeren.in");
+          break;
+      case 5:
+          populate("Quotes.in");
+          break;
+      case 6:
+          System.out.println("Alif likes chicken n");
+          break;
+        }
+        System.out.println(game.addGuess());
+            System.out.println(game.current);
 
   } // end of main method
 } // end of class
