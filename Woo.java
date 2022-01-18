@@ -8,31 +8,38 @@ import java.io.*;
 import java.util.*;
 
 public class Woo {
+
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
-   List<Character> current = new ArrayList<Character>();
+  List<Character> current = new ArrayList<Character>();
+
   public String addGuess(){
     int x = (int) (Math.random()*wordBank.size());
     String guess=wordBank.get(x);
     guess=guess.toUpperCase();
+    String output="";
 
-   for(char c:guess.toCharArray()){
-     guessArr.add(c);
-     if(c<=90 &&c>=65){
-       current.add('_');
-     }
-     else{
-       current.add(c);
-     }
-     current.add(' ');
-     guessArr.add(' ');
+    for(char c:guess.toCharArray()){
+       guessArr.add(c);
+       if(c<=90 &&c>=65){
+         current.add('_');
+       }
+       else{
+         current.add(c);
+       }
+       current.add(' ');
+       guessArr.add(' ');
    }
-   String output="";
+
    for(char e: current){
      output+=e;
    }
+
    return output;
   }
+
+
+
   public static void populate(String fileName){
     // populates arrayList WordBankwith inputs from fileName
     try{
@@ -75,11 +82,21 @@ public class Woo {
           populate("Quotes.in");
           break;
       case 6:
-          System.out.println("Alif likes chicken n");
+          System.out.println("Alif likes chicken nuggets");
           break;
         }
-        System.out.println(game.addGuess());
-            System.out.println(game.current);
 
+    while((game.guessArr.equals(game.current))){
+      System.out.println("Enter your guess: ");
+      Scanner guess = new Scanner(System.in);
+      while(guess.hasNextLine()){
+        char q = guess.next().charAt(0);
+        if(game.guessArr.indexOf(q) > -1){
+          game.current.set(game.guessArr.indexOf(q), game.guessArr.get(q));
+        }else{
+          System.out.println("Alif doesn't like chicken nuggets");
+        }
+      }
+    }
   } // end of main method
 } // end of class
