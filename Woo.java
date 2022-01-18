@@ -55,7 +55,19 @@ public class Woo {
 
   public static void main(String[] args){
 
+    String initialScreen = "";
+    initialScreen += "_______";
+    initialScreen += "\n|/  |";
+    initialScreen += "\n|  (_)";
+    initialScreen += "\n|  \\|/";
+    initialScreen += "\n|   |";
+    initialScreen += "\n|  / \\";
+    initialScreen += "\n|___|___";
+
+
+
     System.out.println("HANGMAN !!!");
+    System.out.println(initialScreen);
     System.out.println("Select your category: ");
     System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
 
@@ -64,27 +76,31 @@ public class Woo {
     int category = sc.nextInt();
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
-          populate("Places.in");
+          populate("inputs/Places.in");
           break;
       case 1:
-          populate("Celebrities.in");
+          populate("inputs/Celebrities.in");
           break;
       case 2:
-          populate("Movies.in");
+          populate("inputs/Movies.in");
           break;
       case 3:
-          populate("TofrsWords.in");
+          populate("inputs/TofrsWords.in");
           break;
       case 4:
-          populate("Thinkeren.in");
+          populate("inputs/Thinkeren.in");
           break;
       case 5:
-          populate("Quotes.in");
+          populate("inputs/Quotes.in");
           break;
       case 6:
           System.out.println("Alif likes chicken nuggets");
           break;
         }
+
+    System.out.println(game.wordBank);
+    System.out.println(game.addGuess());
+
 
     while((game.guessArr.equals(game.current))){
       System.out.println("Enter your guess: ");
