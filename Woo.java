@@ -11,7 +11,7 @@ public class Woo {
 
   public static void main(String[] args){
     Game game= new Game();
-    // game.initialScreen();
+    game.initialScreen();
 
     System.out.println("Select your category: ");
     System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
