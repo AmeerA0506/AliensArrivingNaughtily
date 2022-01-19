@@ -14,16 +14,18 @@ pd 6
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal).
+We had to break in order to exit the scanner while guessing for characters.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+We need to add the ability to guess an entire phrase at once.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ameer's brother is a pretty good programmer!
 the switch() statement is a good alternative to a chain of else if statement.
+char primitives store the ASCII values of the symbol they contain.
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,8 +33,7 @@ we changed ___ to ___ bc...
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
+Never stray far away from compatibility. 
 
 
 
@@ -45,6 +46,11 @@ tales of wisdom gained...
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 
+2022-01-18
+--------------------------------------------------------------
+Nakib Abedin :: Drove v2 of the code.
+Ameer Alnasser :: Assisted Nakib with v2.
+Alif Rahman :: Created UML diagram.
 
 2022-01-17
 --------------------------------------------------------------
