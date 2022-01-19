@@ -9,12 +9,27 @@ import java.util.*;
 
 public class Woo {
 
+  private static String go(int x, int y)
+    {
+      return ("\033[" + x + ";" + y + "H");
+    }
+
+
   public static void main(String[] args){
     Game game= new Game();
-    game.initialScreen();
+    System.out.println("\033[2J");
+    System.out.println(go(1,1));
+    // Clears the terminal before starting the game for a better user interface
+    game.initialScreen(); // Home Screen for the game
 
-    System.out.println("Select your category: ");
-    System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
+    Scanner enter = new Scanner(System.in);
+
+    if(enter.hasNextLine()){
+      System.out.println("\033[2J");
+      System.out.println(go(1,1));
+      System.out.println("Select your category: ");
+      System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
+    }
 
     Scanner sc = new Scanner(System.in);
 

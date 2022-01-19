@@ -15,13 +15,13 @@ OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal).
 We had to break in order to exit the scanner while guessing for characters.
+ANSI styling only needs to be applied once and it will stay for all strings printed out until it gets changed or reset.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We need to add the ability to guess an entire phrase at once.
 Add Timer!
 Add Two Player?
-Add decorations
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,6 +29,7 @@ Ameer's brother is a pretty good programmer!
 the switch() statement is a good alternative to a chain of else if statement.
 char primitives store the ASCII values of the symbol they contain.
 There are ways to customize the terminal (with the resources in TerminallyIll)
+You can clear the terminal using java code by printing out "\033[2J"
 
 
 MID-DEVELOPMENT DESIGN CHANGES
@@ -37,8 +38,7 @@ we changed ___ to ___ bc...
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Never stray far away from compatibility.
-
+Always review documentation if you are uncertain about a certain aspect of a tool that you are using.
 
 
  ______   ______   __   __   __       ______   _______
@@ -49,6 +49,12 @@ Never stray far away from compatibility.
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
+
+2022-01-19
+--------------------------------------------------------------
+Nakib Abedin :: Applied more ANSI decorations to the terminal.
+Ameer Alnasser ::
+Alif Rahman ::
 
 2022-01-18
 --------------------------------------------------------------

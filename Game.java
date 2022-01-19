@@ -9,16 +9,18 @@ public class Game {
 
   public static void initialScreen(){
     String initialScreen = "";
-    initialScreen += "\033[1;36m_______";
-    initialScreen += "\n|/  |          ,--.           |";
-    initialScreen += "\n|  (_)         |   |,---.,---.|---";
-    initialScreen += "\n| \\ | /        |   ||   ||   ||";
-    initialScreen += "\n|  \\|/         `--' `---'`   '`---";
-    initialScreen += "\n|   |          |   |                   ,--.          ,-.-.";
-    initialScreen += "\n|   |          |---|,---.,---.,---.    |   |,---.    | | |,---.,---.";
-    initialScreen += "\n|  / \\         |   |,---||   ||   |    |   |,---|    | | |,---||   |";
-    initialScreen += "\n| /   \\        `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '";
-    initialScreen += "\n|___|___                      `---'";
+    initialScreen += "\033[1;36m_____________________________________________________________________________ ";
+    initialScreen += "\n|/   |         ,--.           |                                             |";
+    initialScreen += "\n|   (_)        |   |,---.,---.|---                                          |";
+    initialScreen += "\n|  \\ | /       |   ||   ||   ||                                             |";
+    initialScreen += "\n|   \\|/        `--' `---'`   '`---                                          |";
+    initialScreen += "\n|    |         |   |                   ,--.          ,-.-.                  |";
+    initialScreen += "\n|    |         |---|,---.,---.,---.    |   |,---.    | | |,---.,---.        |";
+    initialScreen += "\n|   / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |        |";
+    initialScreen += "\n|  /   \\       `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '        |";
+    initialScreen += "\n|                             `---'                                         |";
+    initialScreen += "\n|                            Press \u001b[31mEnter\033[1;36m to Start                           |";
+    initialScreen += "\n|___________________________________________________________________________|";
     System.out.println(initialScreen);
 
   }
