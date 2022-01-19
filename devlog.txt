@@ -65,6 +65,6 @@ Alif Rahman :: added inputs to input.
 2022-01-16
 --------------------------------------------------------------
 Nakib Abedin :: Came up with the ideas of a timer and a customizable word bank. Helped Woo.java implementation.
-Ameer Alnasser :: Wrote out the proposal. Came up with the idea of terminal decorations in the library. Helped Woo.java implementation.
-Alif Rahman :: Made the team flag. Came up with the idea of different categories. Drove Woo.java implementation.
+Ameer Alnasser :: Made the team flag. Wrote out the proposal. Came up with the idea of terminal decorations in the library. Helped Woo.java implementation.
+Alif Rahman :: Came up with the idea of different categories. Drove Woo.java implementation.
 ==============================================================
