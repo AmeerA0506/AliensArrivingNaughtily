@@ -9,16 +9,16 @@ public class Game {
 
   public static void initialScreen(){
     String initialScreen = "";
-    initialScreen += "_______";
-    initialScreen += "\n|/  |         ,--.           |";
-    initialScreen += "\n|  (_)        |   |,---.,---.|---";
-    initialScreen += "\n|  \\|/        |   ||   ||   ||";
-    initialScreen += "\n|   |         `--' `---'`   '`---";
-    initialScreen += "\n|   |         |   |                   ,--.          ,-.-.";
-    initialScreen += "\n|   |         |---|,---.,---.,---.    |   |,---.    | | |,---.,---.";
-    initialScreen += "\n|  / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |";
-    initialScreen += "\n|             `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '";
-    initialScreen += "\n|___|___                     `---'";
+    initialScreen += "\033[1;36m_______";
+    initialScreen += "	\033[1;36m\n|/  |         ,--.           |";
+    initialScreen += "	\033[1;36m\n|  (_)        |   |,---.,---.|---";
+    initialScreen += "	\033[1;36m\n|  \\|/        |   ||   ||   ||";
+    initialScreen += "	\033[1;36m\n|   |         `--' `---'`   '`---";
+    initialScreen += "	\033[1;36m\n|   |         |   |                   ,--.          ,-.-.";
+    initialScreen += "	\033[1;36m\n|   |         |---|,---.,---.,---.    |   |,---.    | | |,---.,---.";
+    initialScreen += "	\033[1;36m\n|  / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |";
+    initialScreen += "	\033[1;36m\n|             `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '";
+    initialScreen += "	\033[1;36m\n|___|___                     `---'";
     System.out.println(initialScreen);
 
   }
