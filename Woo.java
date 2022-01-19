@@ -21,6 +21,7 @@ public class Woo {
     System.out.println(go(1,1));
     // Clears the terminal before starting the game for a better user interface
     game.initialScreen(); // Home Screen for the game
+    System.out.println("\033[?25l");
 
     Scanner enter = new Scanner(System.in);
 
@@ -32,7 +33,6 @@ public class Woo {
     }
 
     Scanner sc = new Scanner(System.in);
-    System.out.println("\033[?25l");
 
     int category = sc.nextInt();
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
@@ -58,6 +58,8 @@ public class Woo {
           System.out.println("Alif likes chicken nuggets");
           break;
         }
+    System.out.println("\033[2J");
+    System.out.println(go(1,1));
 
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(game.printArr(game.current));  // diag
@@ -73,15 +75,17 @@ public class Woo {
         p = game.find(q);
         for(int e : p){
           game.current.set(e, game.guessArr.get(e));
-
-          System.out.println("guessArr: " + game.printArr(game.guessArr));
-          System.out.println("current: " + game.printArr(game.current));
-          System.out.println((game.guessArr.equals(game.current)));
         }
+        System.out.println("\033[2J");
+        System.out.println(go(1,1));
+        System.out.println(game.printArr(game.current));
+
         break;
+
       }
-    System.out.println("CONGRATS, YOU COMPLETED THE GAME!!!");
-    System.out.println("\033[?25h");
+    System.out.println("\033[?25h"); // don't want to get sued for making the user's cursor disappear
   }
+  System.out.println("Congrats, you completed the game!");
+
 }
 }
