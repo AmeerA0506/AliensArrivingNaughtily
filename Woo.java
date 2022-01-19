@@ -32,6 +32,7 @@ public class Woo {
     }
 
     Scanner sc = new Scanner(System.in);
+    System.out.println("\033[?25l");
 
     int category = sc.nextInt();
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
@@ -58,8 +59,8 @@ public class Woo {
           break;
         }
 
-    System.out.println(game.addGuess());
-    System.out.println(game.guessArr);
+    game.addGuess(); // randomly pick the item that the user will be guessing
+    System.out.println(game.printArr(game.current));  // diag
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
@@ -77,9 +78,10 @@ public class Woo {
           System.out.println("current: " + game.printArr(game.current));
           System.out.println((game.guessArr.equals(game.current)));
         }
-        System.out.println("CONGRATS, YOU COMPLETED THE GAME!!!");
         break;
       }
+    System.out.println("CONGRATS, YOU COMPLETED THE GAME!!!");
+    System.out.println("\033[?25h");
   }
 }
 }

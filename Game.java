@@ -8,12 +8,11 @@ public class Game {
   List<Character> current = new ArrayList<Character>();
 
   public static void initialScreen(){
-    String initialScreen = "";
-    initialScreen += "\033[1;36m_____________________________________________________________________________ ";
-    initialScreen += "\n|/   |         ,--.           |                                             |";
-    initialScreen += "\n|   (_)        |   |,---.,---.|---                                          |";
-    initialScreen += "\n|  \\ | /       |   ||   ||   ||                                             |";
-    initialScreen += "\n|   \\|/        `--' `---'`   '`---                                          |";
+    String initialScreen = "\033[1;36m_____________________________________________________________________________ ";
+    initialScreen += "\n|/   |                        ,--.           |                              |";
+    initialScreen += "\n|   (_)                       |   |,---.,---.|---                           |";
+    initialScreen += "\n|  \\ | /                      |   ||   ||   ||                              |";
+    initialScreen += "\n|   \\|/                       `--' `---'`   '`---                           |";
     initialScreen += "\n|    |         |   |                   ,--.          ,-.-.                  |";
     initialScreen += "\n|    |         |---|,---.,---.,---.    |   |,---.    | | |,---.,---.        |";
     initialScreen += "\n|   / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |        |";
