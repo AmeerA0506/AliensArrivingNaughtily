@@ -18,6 +18,7 @@ public class Woo {
 
 
   public static void main(String[] args){
+    int guessCtr=0;
     Game game= new Game();
     System.out.println("\033[2J");
     System.out.println(go(1,1));
@@ -68,8 +69,31 @@ public class Woo {
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
-
+    String f="";
+    List<Character> pain = new ArrayList<Character>();
     while(! (game.guessArr.equals(game.current)) ){
+      System.out.println("Would you like to guess the phrase? (Y/N): ");
+      Scanner bigboiguess = new Scanner(System.in);
+      while (bigboiguess.hasNextLine()){
+        f=bigboiguess.nextLine();
+        if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
+          System.out.println("Feeling lucky I see? Enter your guess here:");
+          f=bigboiguess.nextLine();
+          for(char c:f.toCharArray()){
+             pain.add(c);
+             pain.add(' ');
+         }
+          if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
+            System.out.println("Correct! I'm impressed");
+          }
+          else{
+            guessCtr+=1;
+            System.out.println(game.returnArr(game.guessArr)); //diag
+          }
+          break;
+        }
+        break;
+      }
       System.out.println("Enter your guess: ");
       Scanner guess = new Scanner(System.in);
       while(guess.hasNextLine()){
