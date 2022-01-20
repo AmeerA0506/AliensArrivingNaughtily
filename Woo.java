@@ -16,10 +16,12 @@ public class Woo {
     {
       return ("\033[" + x + ";" + y + "H");
     }
-  
+
   public static void main(String[] args){
     int guessCtr=0;
     Game game= new Game();
+    Hangman hangman = new Hangman();
+
     System.out.println("\033[2J");
     System.out.println(go(1,1));
     // Clears the terminal before starting the game for a better user interface
@@ -61,11 +63,14 @@ public class Woo {
           System.out.println("Alif likes chicken nuggets");
           break;
         }
+
     System.out.println("\033[2J");
     System.out.println(go(1,1));
 
     game.addGuess(); // randomly pick the item that the user will be guessing
-    System.out.println(game.returnArr(game.current));  // diag
+    System.out.println(hangman.returnDrawing(guessCtr));
+    System.out.println(game.returnArr(game.current));
+
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
@@ -87,20 +92,29 @@ public class Woo {
          }
           if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
             System.out.println("Correct! I'm impressed");
+            System.out.println("STATEMENT REACHED");
+            isABigBoi = true;
           }else{
             guessCtr+=1;
-            System.out.println(game.returnArr(game.guessArr)); //diag
+            System.out.println(hangman.returnDrawing(guessCtr));
+
           }
-          isABigBoi = true;
-        }else if(!(f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
+        }else if((f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
+          System.out.println("\033[2J");
+          System.out.println(go(1,1));
+          System.out.println(hangman.returnDrawing(guessCtr));
+          System.out.println(game.returnArr(game.current));
+        }else{
           System.out.println("We'll take that as a no");
         }
         break;
+
       }
 
       if(isABigBoi){
         break;
       }
+
       System.out.println("Enter your guess: ");
       Scanner guess = new Scanner(System.in);
       while(guess.hasNextLine()){
@@ -109,8 +123,16 @@ public class Woo {
         for(int e : p){
           game.current.set(e, game.guessArr.get(e));
         }
+        if(p.size()==0){
+          guessCtr += 1;
+          System.out.println("\033[2J");
+          System.out.println(go(1,1));
+          System.out.println(hangman.returnDrawing(guessCtr));
+          System.out.println(game.returnArr(game.current));
+        }
         System.out.println("\033[2J");
         System.out.println(go(1,1));
+        System.out.println(hangman.returnDrawing(guessCtr));
         System.out.println(game.returnArr(game.current));
 
         break;
@@ -118,7 +140,6 @@ public class Woo {
       }
   }
   System.out.println("\033[?25h"); // don't want to get sued for making the user's cursor disappear
-  System.out.println("Congrats, you completed the game!");
 
 }// end of main method
 }// end of class
