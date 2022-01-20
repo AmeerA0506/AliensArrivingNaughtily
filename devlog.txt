@@ -70,7 +70,7 @@ Alif Rahman :: Came up with the idea of different categories. Drove Woo.java imp
 2022-01-17
 --------------------------------------------------------------
 Nakib Abedin :: Created and wrote v0 of the code.
-Ameer Alnasser :: Drove v1 of the code.
+Ameer Alnasser :: Drove v1 of the code. Implemented the switch statement, which helped optimize code. Realized that ArrayList would be our best bet since Strings are not mutable while ArrayLists did not need a set size and as a result we could change the elements that we please.
 Alif Rahman :: added inputs to input.
 
 2022-01-18
@@ -82,6 +82,6 @@ Alif Rahman :: Created UML diagram.
 2022-01-19
 --------------------------------------------------------------
 Nakib Abedin :: Applied more ANSI decorations to the terminal. Fixed minor bugs in v2 of the code. Finalized v3 of the game.
-Ameer Alnasser ::
+Ameer Alnasser :: 
 Alif Rahman ::
 ==============================================================
