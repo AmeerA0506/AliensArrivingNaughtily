@@ -1,25 +1,22 @@
 // AliensArrivingNaughtily -- Ameer Alnasser + Nakib Abedin + Alif Rahman
 // APCS pd06
 // FP - (Don't) Hang da Man
-// 2022-01-18t
+// 2022-01-20r
 // time spent: 15 hrs
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.swing.text.PlainDocument;
-
 import java.util.List;
 
 public class Woo {
 
   private static String go(int x, int y)
+  // copied and pasted from TerminallIll.java in the library
     {
       return ("\033[" + x + ";" + y + "H");
     }
-
-
+  
   public static void main(String[] args){
     int guessCtr=0;
     Game game= new Game();
@@ -78,12 +75,12 @@ public class Woo {
 
     while(! (game.guessArr.equals(game.current)) ){
       System.out.println("Would you like to guess the phrase? (Y/N): ");
-      Scanner bigboiguess = new Scanner(System.in);
-      while (bigboiguess.hasNextLine()){
-        f=bigboiguess.nextLine();
+      Scanner bigBoiGuess = new Scanner(System.in);
+      while (bigBoiGuess.hasNextLine()){
+        f=bigBoiGuess.nextLine();
         if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
           System.out.println("Feeling lucky I see? Enter your guess here:");
-          f=bigboiguess.nextLine();
+          f=bigBoiGuess.nextLine();
           for(char c:f.toCharArray()){
              pain.add(c);
              pain.add(' ');
