@@ -7,6 +7,7 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 public class Woo {
 
@@ -63,7 +64,7 @@ public class Woo {
     System.out.println(go(1,1));
 
     game.addGuess(); // randomly pick the item that the user will be guessing
-    System.out.println(game.printArr(game.current));  // diag
+    System.out.println(game.returnArr(game.current));  // diag
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
@@ -79,7 +80,7 @@ public class Woo {
         }
         System.out.println("\033[2J");
         System.out.println(go(1,1));
-        System.out.println(game.printArr(game.current));
+        System.out.println(game.returnArr(game.current));
 
         break;
 

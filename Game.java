@@ -1,7 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
 
-public class Game {
+public class Game extends Hangman{
 
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
@@ -72,7 +74,7 @@ public class Game {
       return indicies;
     }
 
-    public String printArr(List<Character> input){
+    public String returnArr(List<Character> input){
       String output = "";
       for(char c : input){
         output += c;
