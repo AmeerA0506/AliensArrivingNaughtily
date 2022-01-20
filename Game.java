@@ -10,7 +10,8 @@ public class Game extends Hangman{
   List<Character> current = new ArrayList<Character>();
 
   public static void initialScreen(){
-    String initialScreen = "\033[1;36m_____________________________________________________________________________ ";
+    String initialScreen = "\033[1;35m_____________________________________________________________________________ ";
+    initialScreen += "\n| /  |                                                                      |";
     initialScreen += "\n|/   |                        ,--.           |                              |";
     initialScreen += "\n|   (_)                       |   |,---.,---.|---                           |";
     initialScreen += "\n|  \\ | /                      |   ||   ||   ||                              |";
@@ -20,7 +21,7 @@ public class Game extends Hangman{
     initialScreen += "\n|   / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |        |";
     initialScreen += "\n|  /   \\       `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '        |";
     initialScreen += "\n|                             `---'                                         |";
-    initialScreen += "\n|                            Press \u001b[31mEnter\033[1;36m to Start                           |";
+    initialScreen += "\n|                            Press \u001b[31mEnter\033[1;35m to \u001b[36mStart\033[1;35m                           |";
     initialScreen += "\n|___________________________________________________________________________|";
     System.out.println(initialScreen);
 

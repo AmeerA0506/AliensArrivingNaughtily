@@ -20,16 +20,17 @@ OBSTACLES OVERCOME
 - For our opening Screen, we wanted to hide the cursor in order to improve the aesthetics of the game. However, once we finished playing, we got sent back to the normal terminal prompt line and the cursor still did not reappear. We had to add a line at the end of our code that made the cursor reappear.
 - For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashed in order to have the same effect. This means a the text in our code looks misaligned but it is aligned in the terminal.
 - We overcame issues with case sensitivity using the toUpperCase() method in the Character wrapper class.
+- We fixed a bug where the user was still being prompted to enter a guess even after guessing the entire phrase.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We need to add the ability to guess an entire phrase at once.
 We need to add a timer.
 We need to have the code draw the hangman after an incorrect guess.
 We want to add a leaderboard but this seems a little implausible because in order for the leaderboard to be accurate, the user would have to push their changes. Otherwise, the leaderboard would only be local but that doesn't seem like it is very useful.
 We want the background color of the terminal to change colors to improve aesthetics, but we are not pleased by the colors available. Are there any other ways to change the background color?
-We have to add a bank of incorrect guesses to help the user keep track of what they guessed.
-
+We have to add a bank of incorrect guesses to help the user keep track of what they guessed. This should be simple though because we can just put the incorrect guesses in an arrayList.
+Have an option to play again?
+Should we ask the user if they want to guess every single time or should we give them an input which they can use to indicate when they want to guess.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,6 +41,7 @@ There are ways to customize the terminal (with the resources in TerminallyIll)
 You can clear the terminal using java code by printing out "\033[2J"
 git stash should return you back to the most recent commit. This can be used as a tool to erase all the changes made before pulling.
 The Character wrapper class has its own toUpperCase() method for characters.
+A single word can be classified as a phrase. Nakib didn't know that.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,6 +51,8 @@ LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Always review documentation if you are uncertain about a certain aspect of a tool that you are using.
 Plan thoroughly before executing (aka MMMC)
+We should planned ahead further. We were going one implementation at a time but we found that later implementations got very complicated because our earlier implemenations weren't future proof.
+Make sure to leave comments for yourself in the future. Oftentimes the lack of comments hurts yourself the most.
 
 
 
@@ -85,4 +89,10 @@ Alif Rahman :: Created UML diagram.
 Nakib Abedin :: Applied more ANSI decorations to the terminal. Fixed minor bugs in v2 of the code. Finalized v3 of the game. Removed case sensitivity for single character guesses.
 Ameer Alnasser :: Added the hangman diagram to appear after every guess as well as having a place in which all wrong guesses are stored. Removed case sensitivity for phrase guesses.
 Alif Rahman :: Wrote the Hangman class. Drove parts of v4.
+
+2022-01-20
+--------------------------------------------------------------
+Nakib Abedin :: Fixed a bug where users were still prompted to enter a guess even after they guessed the entire phrase correctly.
+Ameer Alnasser ::
+Alif Rahman ::
 ==============================================================

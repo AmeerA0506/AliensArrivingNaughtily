@@ -2,11 +2,14 @@
 // APCS pd06
 // FP - (Don't) Hang da Man
 // 2022-01-18t
-// time spent: 5 hrs
+// time spent: 15 hrs
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.text.PlainDocument;
+
 import java.util.List;
 
 public class Woo {
@@ -71,6 +74,8 @@ public class Woo {
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
     String f="";
     List<Character> pain = new ArrayList<Character>();
+    boolean isABigBoi = false;
+
     while(! (game.guessArr.equals(game.current)) ){
       System.out.println("Would you like to guess the phrase? (Y/N): ");
       Scanner bigboiguess = new Scanner(System.in);
@@ -85,13 +90,18 @@ public class Woo {
          }
           if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
             System.out.println("Correct! I'm impressed");
-          }
-          else{
+          }else{
             guessCtr+=1;
             System.out.println(game.returnArr(game.guessArr)); //diag
           }
-          break;
+          isABigBoi = true;
+        }else if(!(f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
+          System.out.println("We'll take that as a no");
         }
+        break;
+      }
+
+      if(isABigBoi){
         break;
       }
       System.out.println("Enter your guess: ");
@@ -109,9 +119,9 @@ public class Woo {
         break;
 
       }
-    System.out.println("\033[?25h"); // don't want to get sued for making the user's cursor disappear
   }
+  System.out.println("\033[?25h"); // don't want to get sued for making the user's cursor disappear
   System.out.println("Congrats, you completed the game!");
 
-}
-}
+}// end of main method
+}// end of class
