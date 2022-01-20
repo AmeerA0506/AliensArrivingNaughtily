@@ -63,13 +63,13 @@ public class Game {
     }
 
     public ArrayList<Integer> find(Character target){
-      ArrayList<Integer> indicies = new ArrayList<Integer>(); // will store indicies
+      ArrayList<Integer> indices = new ArrayList<Integer>(); // will store indices
       for(int i = 0; i < guessArr.size(); i++){
         if(guessArr.get(i).equals(target)){
-          indicies.add(i);
+          indices.add(i);
         }
       }
-      return indicies;
+      return indices;
     }
 
     public String printArr(List<Character> input){

@@ -18,6 +18,10 @@ public class Woo {
 
 
   public static void main(String[] args){
+    char q; // this var will be used for the user input
+    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
+    int guessCtr;
+
     Game game= new Game();
     System.out.println("\033[2J");
     System.out.println(go(1,1));
@@ -37,7 +41,7 @@ public class Woo {
     Scanner sc = new Scanner(System.in);
 
     int category = sc.nextInt();
-    switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
+    switch(category){ //Inspired by Ameer's brother
       case 0:
           game.populate("inputs/Places.in");
           break;
@@ -66,8 +70,6 @@ public class Woo {
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(game.printArr(game.current));  // diag
 
-    char q; // this var will be used for the user input
-    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
 
     while(! (game.guessArr.equals(game.current)) ){
       System.out.println("Enter your guess: ");
@@ -78,9 +80,14 @@ public class Woo {
         for(int e : p){
           game.current.set(e, game.guessArr.get(e));
         }
+        if (p.size()==0){
+          System.out.println("That is unfortunate, buckaroo. Try Again");
+          guessCtr+=1;
+        }
         System.out.println("\033[2J");
         System.out.println(go(1,1));
         System.out.println(game.printArr(game.current));
+        System.out.println(game.printDrawing(guessCtr));
 
         break;
 

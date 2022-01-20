@@ -82,6 +82,6 @@ Alif Rahman :: Created UML diagram.
 2022-01-19
 --------------------------------------------------------------
 Nakib Abedin :: Applied more ANSI decorations to the terminal. Fixed minor bugs in v2 of the code. Finalized v3 of the game.
-Ameer Alnasser :: 
+Ameer Alnasser :: Added the hangman diagram to appear after every guess as well as having a place in which all wrong guesses are stored.
 Alif Rahman ::
 ==============================================================
