@@ -13,26 +13,41 @@ pd 6
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-How to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal).
+- How to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal).
+- We had to break in order to exit the scanner while guessing for characters.
+- ANSI styling only needs to be applied once and it will stay for all strings printed out until it gets changed or reset.
+- After a screen is cleared the cursor should be moved to (1,1). This will mean that everything in the terminal is posted on the top left.
+- For our opening Screen, we wanted to hide the cursor in order to improve the aesthetics of the game. However, once we finished playing, we got sent back to the normal terminal prompt line and the cursor still did not reappear. We had to add a line at the end of our code that made the cursor reappear.
+- For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashed in order to have the same effect. This means a the text in our code looks misaligned but it is aligned in the terminal.
+
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+We need to add the ability to guess an entire phrase at once.
+We need to add a timer.
+We need to have the code draw the hangman after an incorrect guess.
+We want to add a leaderboard but this seems a little implausible because in order for the leaderboard to be accurate, the user would have to push their changes. Otherwise, the leaderboard would only be local but that doesn't seem like it is very useful.
+We want the background color of the terminal to change colors to improve aesthetics, but we are not pleased by the colors available. Are there any other ways to change the background color?
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ameer's brother is a pretty good programmer!
 the switch() statement is a good alternative to a chain of else if statement.
+char primitives store the ASCII values of the symbol they contain.
+There are ways to customize the terminal (with the resources in TerminallyIll)
+You can clear the terminal using java code by printing out "\033[2J"
+git stash should return you back to the most recent commit. This can be used as a tool to erase all the changes made before pulling.
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+We chose not to implement the leaderboard because it seems a little difficult to implement.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
+Always review documentation if you are uncertain about a certain aspect of a tool that you are using.
+
 
 
 
@@ -46,15 +61,27 @@ tales of wisdom gained...
 ==============================================================
 
 
-2022-01-17
---------------------------------------------------------------
-Nakib Abedin :: Created v0 of the code.
-Ameer Alnasser :: Drove v1 of the code.
-Alif Rahman :: added inputs to input.
-
 2022-01-16
 --------------------------------------------------------------
 Nakib Abedin :: Came up with the ideas of a timer and a customizable word bank. Helped Woo.java implementation.
-Ameer Alnasser :: Wrote out the proposal. Came up with the idea of terminal decorations in the library. Helped Woo.java implementation.
-Alif Rahman :: Made the team flag. Came up with the idea of different categories. Drove Woo.java implementation.
+Ameer Alnasser :: Made the team flag. Wrote out the proposal. Came up with the idea of terminal decorations in the library. Helped Woo.java implementation.
+Alif Rahman :: Came up with the idea of different categories. Drove Woo.java implementation.
+
+2022-01-17
+--------------------------------------------------------------
+Nakib Abedin :: Created and wrote v0 of the code.
+Ameer Alnasser :: Drove v1 of the code.
+Alif Rahman :: added inputs to input.
+
+2022-01-18
+--------------------------------------------------------------
+Nakib Abedin :: Drove v2 of the code. Added ANSI colors to terminal
+Ameer Alnasser :: Assisted Nakib with v2.
+Alif Rahman :: Created UML diagram.
+
+2022-01-19
+--------------------------------------------------------------
+Nakib Abedin :: Applied more ANSI decorations to the terminal. Fixed minor bugs in v2 of the code. Finalized v3 of the game.
+Ameer Alnasser ::
+Alif Rahman ::
 ==============================================================

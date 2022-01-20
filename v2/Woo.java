@@ -9,28 +9,12 @@ import java.util.*;
 
 public class Woo {
 
-  private static String go(int x, int y)
-    {
-      return ("\033[" + x + ";" + y + "H");
-    }
-
-
   public static void main(String[] args){
     Game game= new Game();
-    System.out.println("\033[2J");
-    System.out.println(go(1,1));
-    // Clears the terminal before starting the game for a better user interface
-    game.initialScreen(); // Home Screen for the game
-    System.out.println("\033[?25l");
+    // game.initialScreen();
 
-    Scanner enter = new Scanner(System.in);
-
-    if(enter.hasNextLine()){
-      System.out.println("\033[2J");
-      System.out.println(go(1,1));
-      System.out.println("Select your category: ");
-      System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
-    }
+    System.out.println("Select your category: ");
+    System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
 
     Scanner sc = new Scanner(System.in);
 
@@ -58,11 +42,9 @@ public class Woo {
           System.out.println("Alif likes chicken nuggets");
           break;
         }
-    System.out.println("\033[2J");
-    System.out.println(go(1,1));
 
-    game.addGuess(); // randomly pick the item that the user will be guessing
-    System.out.println(game.printArr(game.current));  // diag
+    System.out.println(game.addGuess());
+    System.out.println(game.guessArr);
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
@@ -75,17 +57,14 @@ public class Woo {
         p = game.find(q);
         for(int e : p){
           game.current.set(e, game.guessArr.get(e));
+
+          System.out.println("guessArr: " + game.printArr(game.guessArr));
+          System.out.println("current: " + game.printArr(game.current));
+          System.out.println((game.guessArr.equals(game.current)));
         }
-        System.out.println("\033[2J");
-        System.out.println(go(1,1));
-        System.out.println(game.printArr(game.current));
-
+        System.out.println("CONGRATS, YOU COMPLETED THE GAME!!!");
         break;
-
       }
-    System.out.println("\033[?25h"); // don't want to get sued for making the user's cursor disappear
   }
-  System.out.println("Congrats, you completed the game!");
-
 }
 }
