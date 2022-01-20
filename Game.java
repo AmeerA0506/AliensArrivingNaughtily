@@ -67,7 +67,7 @@ public class Game extends Hangman{
     public ArrayList<Integer> find(Character target){
       ArrayList<Integer> indicies = new ArrayList<Integer>(); // will store indicies
       for(int i = 0; i < guessArr.size(); i++){
-        if(guessArr.get(i).equals(target)||guessArr.get(i).equals(target+32)){
+        if(guessArr.get(i).equals(target)||guessArr.get(i).equals(Character.toUpperCase(target))){
           indicies.add(i);
         }
       }

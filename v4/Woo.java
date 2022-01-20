@@ -7,7 +7,7 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.List;
 
 public class Woo {
 
@@ -18,10 +18,7 @@ public class Woo {
 
 
   public static void main(String[] args){
-    char q; // this var will be used for the user input
-    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
-    int guessCtr;
-
+    int guessCtr=0;
     Game game= new Game();
     System.out.println("\033[2J");
     System.out.println(go(1,1));
@@ -41,7 +38,7 @@ public class Woo {
     Scanner sc = new Scanner(System.in);
 
     int category = sc.nextInt();
-    switch(category){ //Inspired by Ameer's brother
+    switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
           game.populate("inputs/Places.in");
           break;
@@ -68,10 +65,35 @@ public class Woo {
     System.out.println(go(1,1));
 
     game.addGuess(); // randomly pick the item that the user will be guessing
-    System.out.println(game.printArr(game.current));  // diag
+    System.out.println(game.returnArr(game.current));  // diag
 
-
+    char q; // this var will be used for the user input
+    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
+    String f="";
+    List<Character> pain = new ArrayList<Character>();
     while(! (game.guessArr.equals(game.current)) ){
+      System.out.println("Would you like to guess the phrase? (Y/N): ");
+      Scanner bigboiguess = new Scanner(System.in);
+      while (bigboiguess.hasNextLine()){
+        f=bigboiguess.nextLine();
+        if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
+          System.out.println("Feeling lucky I see? Enter your guess here:");
+          f=bigboiguess.nextLine();
+          for(char c:f.toCharArray()){
+             pain.add(c);
+             pain.add(' ');
+         }
+          if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
+            System.out.println("Correct! I'm impressed");
+          }
+          else{
+            guessCtr+=1;
+            System.out.println(game.returnArr(game.guessArr)); //diag
+          }
+          break;
+        }
+        break;
+      }
       System.out.println("Enter your guess: ");
       Scanner guess = new Scanner(System.in);
       while(guess.hasNextLine()){
@@ -80,14 +102,9 @@ public class Woo {
         for(int e : p){
           game.current.set(e, game.guessArr.get(e));
         }
-        if (p.size()==0){
-          System.out.println("That is unfortunate, buckaroo. Try Again");
-          guessCtr+=1;
-        }
         System.out.println("\033[2J");
         System.out.println(go(1,1));
-        System.out.println(game.printArr(game.current));
-        System.out.println(game.printDrawing(guessCtr));
+        System.out.println(game.returnArr(game.current));
 
         break;
 

@@ -1,7 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
 
-public class Game {
+public class Game extends Hangman{
 
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
@@ -63,16 +65,16 @@ public class Game {
     }
 
     public ArrayList<Integer> find(Character target){
-      ArrayList<Integer> indices = new ArrayList<Integer>(); // will store indices
+      ArrayList<Integer> indicies = new ArrayList<Integer>(); // will store indicies
       for(int i = 0; i < guessArr.size(); i++){
-        if(guessArr.get(i).equals(target)){
-          indices.add(i);
+        if(guessArr.get(i).equals(target)||guessArr.get(i).equals(Character.toUpperCase(target))){
+          indicies.add(i);
         }
       }
-      return indices;
+      return indicies;
     }
 
-    public String printArr(List<Character> input){
+    public String returnArr(List<Character> input){
       String output = "";
       for(char c : input){
         output += c;
