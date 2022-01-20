@@ -2,7 +2,7 @@
 ## Dont Hang Da Man :: Nakib Abedin, Ameer Alnasser, Alif Rahman
 
 ## What is this Project?
-* In order to showcase what we have learned during this semester, we felt that a game of Hangman would show a mix of Array iteration, input/output usage, as well as comparisons between lists, strings, and characters. A random phrase is picked out of a list picked by the user. After that, the user guesses a letter, in which all instances of that letter are then revealed. if there are no instances of the letter, a hangman diagram gains a part, and if the body gets completed the game finishes. You can also choose to guess a phrase/
+* In order to showcase what we have learned during this semester, we felt that a game of Hangman would show a mix of Array iteration, input/output usage, as well as comparisons between lists, strings, and characters. A random phrase is picked out of a list picked by the user. After that, the user guesses a letter, in which all instances of that letter are then revealed. if there are no instances of the letter, a hangman diagram gains a part, and if the body gets completed the game finishes. You can also choose to guess a phrase.
 
 ## How to launch?
 
