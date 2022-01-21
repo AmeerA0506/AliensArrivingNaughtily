@@ -28,7 +28,7 @@ public class Woo {
   private static final String SHOW_CURSOR =  "\033[?25h";
 
   // All copied and pasted from ap251/library/TerminallyIll.java
-  // Thank you Mr. Mykolyk!
+  // Thank you Mr. K!
 
 
   private static String go(int x, int y)
@@ -161,15 +161,18 @@ public class Woo {
         break;
       }
 
+      boolean test = false;
       System.out.println("Enter your guess: ");
       Scanner guess = new Scanner(System.in);
       while(guess.hasNextLine()){
         q = guess.next().charAt(0);
+        System.out.println("Reached");
         p = game.find(q);
-        for(int e : p){
-          game.current.set(e, game.guessArr.get(e));
+        
+        if ( (game.returnArr(wrongGuesses).indexOf(q) > -1) || (game.returnArr(game.current).indexOf(q) > -1) ) {
+          test = true;
         }
-        if(p.size()==0){
+        else if (p.size()==0){
           guessCtr += 1;
           wrongGuesses.add(q);
           System.out.println(CLEAR_SCREEN);
@@ -180,10 +183,21 @@ public class Woo {
           System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
           break;
         }
+
+        for(int e : p){
+          game.current.set(e, game.guessArr.get(e));
+        }
+
         System.out.println(CLEAR_SCREEN);
         System.out.println(go(1,1));
         System.out.println(hangman.returnDrawing(guessCtr));
         System.out.println(game.returnArr(game.current));
+        if (test == true) {
+          System.out.println("You have already guessed this letter!");
+          System.out.println("Don't think we wouldn't catch you slippin'!");
+          System.out.println("Please try again : ^ )");
+          test = false;
+        }
         System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
 
         break;
