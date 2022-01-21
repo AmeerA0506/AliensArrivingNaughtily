@@ -29,7 +29,7 @@ public class Woo {
 
   // All copied and pasted from ap251/library/TerminallyIll.java
   // Thank you Mr. Mykolyk!
-  
+
 
   private static String go(int x, int y)
   // copied and pasted from TerminallIll.java
@@ -96,7 +96,7 @@ public class Woo {
     timer.startTimer();
 
     char q; // this var will be used for the user input
-    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find the indexOf q in the item being guessed
+    ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
     String f="";
     List<Character> pain = new ArrayList<Character>();
     boolean isABigBoi = false;
@@ -114,24 +114,26 @@ public class Woo {
       }
       System.out.println("Would you like to guess the phrase? (Y/N): ");
       Scanner bigBoiGuess = new Scanner(System.in);
+
       while (bigBoiGuess.hasNextLine()){
         f=bigBoiGuess.nextLine();
 
         if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
           System.out.println("Feeling lucky I see? Enter your guess here:");
           f=bigBoiGuess.nextLine();
-          for(char c:f.toCharArray()){
+          for(char c: f.toCharArray()){
              pain.add(c);
              pain.add(' ');
          }
           if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
+            timer.stopTimer();
             System.out.println("Correct! I'm impressed");
             isABigBoi = true;
-            timer.stopTimer();
             System.out.print("Time: ");
             timer.printSimplifiedTime(timer.getTimeElapsed());
           }else{
             guessCtr+=1;
+            pain.clear();
             System.out.println(hangman.returnDrawing(guessCtr));
             System.out.println(CLEAR_SCREEN);
             System.out.println(go(1,1));

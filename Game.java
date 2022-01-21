@@ -93,4 +93,13 @@ public class Game extends Hangman{
       }
       return output;
     }
-}
+
+    public void clearArray (List<Character> arr){
+      for (int i=0; i<arr.size(); i++){
+        arr.remove(i);
+        arr.remove(" ");
+      }
+      System.out.println(arr);
+    }
+
+}// end class
