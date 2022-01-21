@@ -98,8 +98,8 @@ Alif Rahman :: Fixed a bug where nothing showed up after incorrect guesses. Drov
 
 2022-01-21
 --------------------------------------------------------------
-Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess.
-Ameer Alnasser ::
-Alif Rahman ::
+Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess. Helped drive v6 --> located another bug.
+Ameer Alnasser :: Helped drive v6 --> located bug.
+Alif Rahman :: Drove v6 in class --> fixed repeated guesses. 
 
 ==============================================================
