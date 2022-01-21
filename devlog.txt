@@ -21,16 +21,15 @@ OBSTACLES OVERCOME
 - For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashed in order to have the same effect. This means a the text in our code looks misaligned but it is aligned in the terminal.
 - We overcame issues with case sensitivity using the toUpperCase() method in the Character wrapper class.
 - We fixed a bug where the user was still being prompted to enter a guess even after guessing the entire phrase.
+- Adding timer was very simple with the helper class. We were able to implement it very quickly.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We need to add a timer.
-We need to have the code draw the hangman after an incorrect guess.
 We want to add a leaderboard but this seems a little implausible because in order for the leaderboard to be accurate, the user would have to push their changes. Otherwise, the leaderboard would only be local but that doesn't seem like it is very useful.
 We want the background color of the terminal to change colors to improve aesthetics, but we are not pleased by the colors available. Are there any other ways to change the background color?
-We have to add a bank of incorrect guesses to help the user keep track of what they guessed. This should be simple though because we can just put the incorrect guesses in an arrayList.
 Have an option to play again?
 Should we ask the user if they want to guess every single time or should we give them an input which they can use to indicate when they want to guess.
+We should clean up our code in Woo. The code starts off pretty readable but slowly digresses into chaos. It is hard for anyone to follow along so maybe we should split it up into different helper methods.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,6 +41,7 @@ You can clear the terminal using java code by printing out "\033[2J"
 git stash should return you back to the most recent commit. This can be used as a tool to erase all the changes made before pulling.
 The Character wrapper class has its own toUpperCase() method for characters.
 A single word can be classified as a phrase. Nakib didn't know that.
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +92,7 @@ Alif Rahman :: Wrote the Hangman class. Drove parts of v4.
 
 2022-01-20
 --------------------------------------------------------------
-Nakib Abedin :: Fixed a bug where users were still prompted to enter a guess even after they guessed the entire phrase correctly.
-Ameer Alnasser ::
-Alif Rahman ::
+Nakib Abedin :: Fixed a bug where users were still prompted to enter a guess even after they guessed the entire phrase correctly. Finished rest of v5 at home. Added Timer and a place where all the incorrect guesses are shown.
+Ameer Alnasser :: Assisted Nakib with v5.
+Alif Rahman :: Fixed a bug where nothing showed up after incorrect guesses. Drove part of v5 in class.
 ==============================================================
