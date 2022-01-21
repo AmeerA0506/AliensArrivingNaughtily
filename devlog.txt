@@ -95,4 +95,11 @@ Alif Rahman :: Wrote the Hangman class. Drove parts of v4.
 Nakib Abedin :: Fixed a bug where users were still prompted to enter a guess even after they guessed the entire phrase correctly. Finished rest of v5 at home. Added Timer and a place where all the incorrect guesses are shown.
 Ameer Alnasser :: Assisted Nakib with v5.
 Alif Rahman :: Fixed a bug where nothing showed up after incorrect guesses. Drove part of v5 in class.
+
+2022-01-21
+--------------------------------------------------------------
+Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess.
+Ameer Alnasser ::
+Alif Rahman ::
+
 ==============================================================
