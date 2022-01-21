@@ -1,13 +1,13 @@
 public class Hangman {
-  public static final String stage0 = "____________\n|/   | \n|    |\n|\n|\n|\n|\n|\n|\n|\n|\n|___________";
-  public static final String stage1 = "____________\n|/   | \n|    |\n|   (_)\n|\n|\n|\n|\n|\n|___________";
-  public static final String stage2 = "____________\n|/   | \n|    |\n|   (_)\n|    | \n|    |\n|    |\n|    |\n|\n|\n|\n|___________";
-  public static final String stage3 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | \n|   \\|\n|    |\n|    |\n|\n|\n|\n|___________";
-  public static final String stage4 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|\n|\n|\n|___________";
-  public static final String stage5 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \n|  /   \n|\n|\n|\n|___________";
-  public static final String stage6 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \\\n|  /   \\\n|\n|\n|\n|___________";
+  private static final String stage0 = "____________\n|/   | \n|    |\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|___________";
+  private static final String stage1 = "____________\n|/   | \n|    |\n|   (_)\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|___________";
+  private static final String stage2 = "____________\n|/   | \n|    |\n|   (_)\n|    | \n|    |\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
+  private static final String stage3 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | \n|   \\|\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
+  private static final String stage4 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
+  private static final String stage5 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \n|  /   \n|\n|\n|\n|___________";
+  private static final String stage6 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \\\n|  /   \\\n|\n|\n|\n|___________";
 
-  public static String returnDrawing (int x) {
+  public String returnDrawing (int x) {
     String answer = "";
     switch(x){
       case 0:

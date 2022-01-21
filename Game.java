@@ -9,7 +9,7 @@ public class Game extends Hangman{
   List<Character> guessArr = new ArrayList<Character>();
   List<Character> current = new ArrayList<Character>();
 
-  public static void initialScreen(){
+  public void initialScreen(){
     String initialScreen = "\033[1;35m_____________________________________________________________________________ ";
     initialScreen += "\n| /  |                                                                      |";
     initialScreen += "\n|/   |                        ,--.           |                              |";
@@ -79,6 +79,17 @@ public class Game extends Hangman{
       String output = "";
       for(char c : input){
         output += c;
+      }
+      return output;
+    }
+
+    public String returnWrongGuesses(List<Character> inputArr){
+      String output = "";
+      if(inputArr.size()==0){
+        return output;
+      }
+      for (Character c : inputArr){
+        output = output + c + " ";
       }
       return output;
     }
