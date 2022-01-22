@@ -55,7 +55,8 @@ public class Woo {
     if(enter.hasNextLine()){
       System.out.println(CLEAR_SCREEN);
       System.out.println(go(1,1));
-      System.out.println("Select your category: ");
+      System.out.println("Welcome to Dont Hang da Man!");
+      System.out.println("Select your theme");
       System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
     }
 
@@ -83,18 +84,17 @@ public class Woo {
           break;
       case 6:
           System.out.println("Alif likes chicken nuggets");
-          break;
+          System.exit(0);
         }
 
     System.out.println(CLEAR_SCREEN);
     System.out.println(go(1,1));
-
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(hangman.returnDrawing(guessCtr));
     System.out.println(game.returnArr(game.current));
     System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
     timer.startTimer();
-
+    
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
     String f="";
@@ -112,7 +112,7 @@ public class Woo {
         System.out.println("Better luck next time!");
         return;
       }
-      System.out.println("Would you like to guess the phrase? (Y/N): ");
+      System.out.println("Would you like to guess the entire phrase? (Y/N): ");
       Scanner bigBoiGuess = new Scanner(System.in);
 
       while (bigBoiGuess.hasNextLine()){
@@ -141,7 +141,7 @@ public class Woo {
             System.out.println(game.returnArr(game.current));
             System.out.println("Incorrect...");
             System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
-            System.out.println("Would you like to guess the phrase? (Y/N): ");
+            System.out.println("Would you like to guess the entire phrase? (Y/N): ");
             continue;
           }
         }else if((f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){

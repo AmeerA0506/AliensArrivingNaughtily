@@ -21,26 +21,39 @@ public class Game extends Hangman{
   private static final String HIDE_CURSOR =  "\033[?25l";
   private static final String SHOW_CURSOR =  "\033[?25h";
 
-  static List<String> wordBank = new ArrayList<String>();
-  List<Character> guessArr = new ArrayList<Character>();
-  List<Character> current = new ArrayList<Character>();
+  public static List<String> wordBank = new ArrayList<String>();
+  public List<Character> guessArr = new ArrayList<Character>();
+  public List<Character> current = new ArrayList<Character>();
+
+  private static void wait(int millis)
+  {
+    try {
+      Thread.sleep(millis);
+    }
+    catch (InterruptedException e) {
+    }
+  }
 
   public void initialScreen(){
-    String initialScreen = "\u001B["+WHITE+ "m_____________________________________________________________________________";
-    initialScreen += "\n| /  \u001B["+RED+ "m |                                                                     \u001B["+WHITE+"m|";
-    initialScreen += "\n|/   \u001B["+RED+ "m |                       \u001B["+YELLOW+"m,--.           |    \u001B["+WHITE+"m                          |";
-    initialScreen += "\n|   \u001B["+RED+ "m (_)                      \u001B["+YELLOW+"m|   |,---.,---.|--- \u001B["+WHITE+"m                          |";
-    initialScreen += "\n|  \u001B["+RED+ "m \\ | /                    \u001B["+YELLOW+"m |   ||   ||   ||   \u001B["+WHITE+"m                           |";
-    initialScreen += "\n|   \u001B["+RED+ "m \\|/                     \u001B["+YELLOW+"m `--' `---'`   '`---\u001B["+WHITE+"m                           |";
-    initialScreen += "\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|   |                 \u001B["+CYAN+"m  ,--.        \u001B["+BLUE+"m  ,-.-.              \u001B["+WHITE+"m    |";
-    initialScreen += "\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|---|,---.,---.,---.  \u001B["+CYAN+"m  |   |,---.  \u001B["+BLUE+"m  | | |,---.,---.    \u001B["+WHITE+"m    |";
-    initialScreen += "\n|   \u001B["+RED+ "m / \\      \u001B["+GREEN+"m |   |,---||   ||   | \u001B["+CYAN+"m   |   |,---| \u001B["+BLUE+"m   | | |,---||   |   \u001B["+WHITE+"m     |";
-    initialScreen += "\n|  \u001B["+RED+ "m /   \\     \u001B["+GREEN+"m `   '`---^`   '`---| \u001B["+CYAN+"m   `--' `---^ \u001B["+BLUE+"m   ` ' '`---''   '   \u001B["+WHITE+"m     |";
-    initialScreen += "\n|                            \u001B["+GREEN+"m `---'   \u001B["+WHITE+ "m                                      |";
-    initialScreen += "\n|                             Press \u001B["+RED+"mEnter\u001B["+WHITE+"m to Start                          |";
-    initialScreen += "\n|___________________________________________________________________________|";
-    System.out.println(initialScreen);
+    List<String> initScreen = new ArrayList<>();
+    initScreen.add("\u001B["+WHITE+ "m_____________________________________________________________________________");
+    initScreen.add("\n| /  \u001B["+RED+ "m |                                                                     \u001B["+WHITE+"m|");
+    initScreen.add("\n|/   \u001B["+RED+ "m |                       \u001B["+YELLOW+"m,--.           |    \u001B["+WHITE+"m                          |");
+    initScreen.add("\n|   \u001B["+RED+ "m (_)                      \u001B["+YELLOW+"m|   |,---.,---.|--- \u001B["+WHITE+"m                          |");
+    initScreen.add("\n|  \u001B["+RED+ "m \\ | /                    \u001B["+YELLOW+"m |   ||   ||   ||   \u001B["+WHITE+"m                           |");
+    initScreen.add("\n|   \u001B["+RED+ "m \\|/                     \u001B["+YELLOW+"m `--' `---'`   '`---\u001B["+WHITE+"m                           |");
+    initScreen.add("\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|   |                 \u001B["+CYAN+"m  ,--.        \u001B["+BLUE+"m  ,-.-.              \u001B["+WHITE+"m    |");
+    initScreen.add("\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|---|,---.,---.,---.  \u001B["+CYAN+"m  |   |,---.  \u001B["+BLUE+"m  | | |,---.,---.    \u001B["+WHITE+"m    |");
+    initScreen.add("\n|   \u001B["+RED+ "m / \\      \u001B["+GREEN+"m |   |,---||   ||   | \u001B["+CYAN+"m   |   |,---| \u001B["+BLUE+"m   | | |,---||   |   \u001B["+WHITE+"m     |");
+    initScreen.add("\n|  \u001B["+RED+ "m /   \\     \u001B["+GREEN+"m `   '`---^`   '`---| \u001B["+CYAN+"m   `--' `---^ \u001B["+BLUE+"m   ` ' '`---''   '   \u001B["+WHITE+"m     |");
+    initScreen.add("\n|                            \u001B["+GREEN+"m `---'   \u001B["+WHITE+ "m                                      |");
+    initScreen.add("\n|                             Press \u001B["+RED+"mEnter\u001B["+WHITE+"m to Start                          |");
+    initScreen.add("\n|___________________________________________________________________________|");
 
+    for(String line : initScreen){
+      System.out.print(line);
+      wait(100);
+    }
   }
 
     public String addGuess(){
