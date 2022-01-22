@@ -32,7 +32,7 @@ public class Hangman {
           answer = stage6;
           break;
         }
-      return answer;
+      return answer + "\n";
   }
 
 } // end of class

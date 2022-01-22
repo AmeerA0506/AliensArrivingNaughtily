@@ -30,7 +30,7 @@ public class Woo {
   // All copied and pasted from ap251/library/TerminallyIll.java
   // Thank you Mr. K!
 
-  private static void go()
+  private static void clear()
   // Inspired from TerminallIll.java
   // Clears the screen and makes the cursor move to the top left of the terminal
     {
@@ -45,14 +45,14 @@ public class Woo {
     Timer timer = new Timer();
     List<Character> wrongGuesses = new ArrayList<>();
 
-    go();
+    clear();
     game.initialScreen(); // Home Screen for the game
     System.out.println(HIDE_CURSOR); // Hides cursor -- it just looks nicer.
 
     Scanner enter = new Scanner(System.in); // Init Scanner to take in input for categories
 
     if(enter.hasNextLine()){
-      go();
+      clear();
       System.out.println("Welcome to Dont Hang da Man!");
       System.out.println("Select your theme");
       System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
@@ -85,7 +85,7 @@ public class Woo {
           System.exit(0);
         }
 
-    go();
+    clear();
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(hangman.returnDrawing(guessCtr));
     System.out.println(game.returnArr(game.current));
@@ -95,18 +95,19 @@ public class Woo {
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
     String f="";
-    List<Character> pain = new ArrayList<Character>();
+    List<Character> phraseGuess = new ArrayList<Character>();
     boolean isABigBoi = false;
 
     while(! (game.guessArr.equals(game.current)) ){
       if(guessCtr==6){
-        go();
+        System.out.println("REACHED");
+        clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         timer.stopTimer();
         timer.printSimplifiedTime(timer.getTimeElapsed());
         System.out.println("You have run out of guesses :(");
         System.out.println("Better luck next time!");
-        System.out.println("The phrase was " + "" + "!");
+        System.out.println("The phrase was " + game.returnArr(game.guessArr));
         return;
       }
 
@@ -119,20 +120,33 @@ public class Woo {
           System.out.println("Feeling lucky I see? Enter your guess here:");
           f=bigBoiGuess.nextLine();
           for(char c: f.toCharArray()){
-             pain.add(c);
-             pain.add(' ');
+             phraseGuess.add(c);
+             phraseGuess.add(' ');
          }
-          if(game.returnArr(pain).toUpperCase().equals(game.returnArr(game.guessArr))){
+          if(game.returnArr(phraseGuess).toUpperCase().equals(game.returnArr(game.guessArr))){
             timer.stopTimer();
+            clear();
+            System.out.println(game.returnDrawing(guessCtr));
+            System.out.println(game.returnArr(game.guessArr));
             System.out.println("Correct! I'm impressed");
             isABigBoi = true;
             System.out.print("Time: ");
             timer.printSimplifiedTime(timer.getTimeElapsed());
           }else{
             guessCtr+=1;
-            pain.clear();
+            phraseGuess.clear();
+            if(guessCtr == 6){
+              clear();
+              System.out.println(hangman.returnDrawing(guessCtr));
+              timer.stopTimer();
+              timer.printSimplifiedTime(timer.getTimeElapsed());
+              System.out.println("You have run out of guesses :(");
+              System.out.println("Better luck next time!");
+              System.out.println("The phrase was " + game.guess);
+              return;
+            }
             System.out.println(hangman.returnDrawing(guessCtr));
-            go();
+            clear();
             System.out.println(hangman.returnDrawing(guessCtr));
             System.out.println(game.returnArr(game.current));
             System.out.println("Incorrect...");
@@ -141,7 +155,7 @@ public class Woo {
             continue;
           }
         }else if((f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
-          go();
+          clear();
           System.out.println(hangman.returnDrawing(guessCtr));
           System.out.println(game.returnArr(game.current));
           System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
@@ -169,7 +183,7 @@ public class Woo {
         else if (p.size()==0){
           guessCtr += 1;
           wrongGuesses.add(q);
-          go();
+          clear();
           System.out.println(hangman.returnDrawing(guessCtr));
           System.out.println("Incorrect...");
           System.out.println(game.returnArr(game.current));
@@ -181,7 +195,7 @@ public class Woo {
           game.current.set(e, game.guessArr.get(e));
         }
 
-        go();
+        clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         System.out.println(game.returnArr(game.current));
         if (test == true) {

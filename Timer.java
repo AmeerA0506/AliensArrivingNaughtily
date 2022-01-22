@@ -14,7 +14,7 @@ public class Timer{
     int secondsElapsed = ((int) timeElapsed) / 1000;
     int minutesElapsed = secondsElapsed / 60;
     System.out.print(minutesElapsed + " minutes " + secondsElapsed%60 + " seconds.");
-    // We assume that the user will not take more than an 59 minutes to complete the code.
+    // We assume that the user will not take more than an 59 minutes to complete the game.
     // Thus, the simplied time for our code will tell the user the number of minutes and number of seconds that have elapsed.
     // We will not simplify past the hour mark.
   }

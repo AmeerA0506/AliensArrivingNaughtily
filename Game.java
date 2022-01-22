@@ -22,8 +22,9 @@ public class Game extends Hangman{
   private static final String SHOW_CURSOR =  "\033[?25h";
 
   public static List<String> wordBank = new ArrayList<String>();
-  public List<Character> guessArr = new ArrayList<Character>();
-  public List<Character> current = new ArrayList<Character>();
+  String guess;
+  List<Character> guessArr = new ArrayList<Character>();
+  List<Character> current = new ArrayList<Character>();
 
   private static void wait(int millis)
   {
@@ -54,11 +55,11 @@ public class Game extends Hangman{
       System.out.print(line);
       wait(100);
     }
-  }
+  } 
 
     public String addGuess(){
       int x = (int) (Math.random()*wordBank.size());
-      String guess=wordBank.get(x);
+      guess=wordBank.get(x);
       guess=guess.toUpperCase();
       String output="";
 
