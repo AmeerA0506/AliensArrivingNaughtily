@@ -5,23 +5,39 @@ import java.util.List;
 
 public class Game extends Hangman{
 
+  // terminal hax
+  private static final int BRIGHT = 1;
+  private static final int DARK = 2;
+  private static final int ITALICS = 3;
+  private static final int BLACK = 30;
+  private static final int BLUE = 34;
+  private static final int GREEN = 32;
+  private static final int RED = 31;
+  private static final int YELLOW = 33;
+  private static final int MAGENTA = 35;
+  private static final int CYAN = 36;
+  private static final int WHITE = 37;
+  private static final String CLEAR_SCREEN =  "\033[2J";
+  private static final String HIDE_CURSOR =  "\033[?25l";
+  private static final String SHOW_CURSOR =  "\033[?25h";
+
   static List<String> wordBank = new ArrayList<String>();
   List<Character> guessArr = new ArrayList<Character>();
   List<Character> current = new ArrayList<Character>();
 
   public void initialScreen(){
-    String initialScreen = "\033[1;35m_____________________________________________________________________________ ";
-    initialScreen += "\n| /  |                                                                      |";
-    initialScreen += "\n|/   |                        ,--.           |                              |";
-    initialScreen += "\n|   (_)                       |   |,---.,---.|---                           |";
-    initialScreen += "\n|  \\ | /                      |   ||   ||   ||                              |";
-    initialScreen += "\n|   \\|/                       `--' `---'`   '`---                           |";
-    initialScreen += "\n|    |         |   |                   ,--.          ,-.-.                  |";
-    initialScreen += "\n|    |         |---|,---.,---.,---.    |   |,---.    | | |,---.,---.        |";
-    initialScreen += "\n|   / \\        |   |,---||   ||   |    |   |,---|    | | |,---||   |        |";
-    initialScreen += "\n|  /   \\       `   '`---^`   '`---|    `--' `---^    ` ' '`---''   '        |";
-    initialScreen += "\n|                             `---'                                         |";
-    initialScreen += "\n|                            Press \u001b[31mEnter\033[1;35m to \u001b[36mStart\033[1;35m                           |";
+    String initialScreen = "\u001B["+WHITE+ "m_____________________________________________________________________________";
+    initialScreen += "\n| /  \u001B["+RED+ "m |                                                                     \u001B["+WHITE+"m|";
+    initialScreen += "\n|/   \u001B["+RED+ "m |                       \u001B["+YELLOW+"m,--.           |    \u001B["+WHITE+"m                          |";
+    initialScreen += "\n|   \u001B["+RED+ "m (_)                      \u001B["+YELLOW+"m|   |,---.,---.|--- \u001B["+WHITE+"m                          |";
+    initialScreen += "\n|  \u001B["+RED+ "m \\ | /                    \u001B["+YELLOW+"m |   ||   ||   ||   \u001B["+WHITE+"m                           |";
+    initialScreen += "\n|   \u001B["+RED+ "m \\|/                     \u001B["+YELLOW+"m `--' `---'`   '`---\u001B["+WHITE+"m                           |";
+    initialScreen += "\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|   |                 \u001B["+CYAN+"m  ,--.        \u001B["+BLUE+"m  ,-.-.              \u001B["+WHITE+"m    |";
+    initialScreen += "\n|    \u001B["+RED+ "m |        \u001B["+GREEN+"m|---|,---.,---.,---.  \u001B["+CYAN+"m  |   |,---.  \u001B["+BLUE+"m  | | |,---.,---.    \u001B["+WHITE+"m    |";
+    initialScreen += "\n|   \u001B["+RED+ "m / \\      \u001B["+GREEN+"m |   |,---||   ||   | \u001B["+CYAN+"m   |   |,---| \u001B["+BLUE+"m   | | |,---||   |   \u001B["+WHITE+"m     |";
+    initialScreen += "\n|  \u001B["+RED+ "m /   \\     \u001B["+GREEN+"m `   '`---^`   '`---| \u001B["+CYAN+"m   `--' `---^ \u001B["+BLUE+"m   ` ' '`---''   '   \u001B["+WHITE+"m     |";
+    initialScreen += "\n|                            \u001B["+GREEN+"m `---'   \u001B["+WHITE+ "m                                      |";
+    initialScreen += "\n|                             Press \u001B["+RED+"mEnter\u001B["+WHITE+"m to Start                          |";
     initialScreen += "\n|___________________________________________________________________________|";
     System.out.println(initialScreen);
 
@@ -93,4 +109,13 @@ public class Game extends Hangman{
       }
       return output;
     }
-}
+
+    public void clearArray (List<Character> arr){
+      for (int i=0; i<arr.size(); i++){
+        arr.remove(i);
+        arr.remove(" ");
+      }
+      System.out.println(arr);
+    }
+
+}// end class
