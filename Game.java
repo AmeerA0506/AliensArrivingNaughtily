@@ -55,15 +55,14 @@ public class Game extends Hangman{
       System.out.print(line);
       wait(100);
     }
-  } 
+  }
 
     public String addGuess(){
       int x = (int) (Math.random()*wordBank.size());
       guess=wordBank.get(x);
-      guess=guess.toUpperCase();
       String output="";
 
-      for(char c:guess.toCharArray()){
+      for(char c:guess.toUpperCase().toCharArray()){
          guessArr.add(c);
          if(c<=90 && c>=65){
            current.add('_');

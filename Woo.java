@@ -81,8 +81,19 @@ public class Woo {
           game.populate("inputs/Quotes.in");
           break;
       case 6:
-          System.out.println("Alif likes chicken nuggets");
-          System.exit(0);
+          clear();
+          System.out.println("Please enter the phrases you would like to add to the word bank!");
+          System.out.println("Type in \"exit\" when you are done adding phrases!");
+          Scanner diy = new Scanner(System.in);
+          String item;
+          while (diy.hasNextLine()) {
+            item = diy.nextLine();
+            if (item.toLowerCase().equals("exit")) {
+              break;
+            }
+            game.wordBank.add(item);
+          }
+          break;
         }
 
     clear();
@@ -100,14 +111,13 @@ public class Woo {
 
     while(! (game.guessArr.equals(game.current)) ){
       if(guessCtr==6){
-        System.out.println("REACHED");
         clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         timer.stopTimer();
         timer.printSimplifiedTime(timer.getTimeElapsed());
         System.out.println("You have run out of guesses :(");
         System.out.println("Better luck next time!");
-        System.out.println("The phrase was " + game.returnArr(game.guessArr));
+        System.out.println("The phrase was " + game.guess);
         return;
       }
 
