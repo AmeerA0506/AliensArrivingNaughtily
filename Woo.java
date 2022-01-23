@@ -11,27 +11,26 @@ import java.util.List;
 
 public class Woo {
 
-  // terminal hax
-  private static final int BRIGHT = 1;
-  private static final int DARK = 2;
-  private static final int ITALICS = 3;
-  private static final int BLACK = 30;
-  private static final int RED = 31;
-  private static final int GREEN = 32;
-  private static final int YELLOW = 33;
-  private static final int BLUE = 34;
-  private static final int MAGENTA = 35;
-  private static final int CYAN = 36;
-  private static final int WHITE = 37;
+  // // terminal hax
+  // private static final int BRIGHT = 1;
+  // private static final int DARK = 2;
+  // private static final int ITALICS = 3;
+  // private static final int BLACK = 30;
+  // private static final int RED = 31;
+  // private static final int GREEN = 32;
+  // private static final int YELLOW = 33;
+  // private static final int BLUE = 34;
+  // private static final int MAGENTA = 35;
+  // private static final int CYAN = 36;
+  // private static final int WHITE = 37;
   private static final String CLEAR_SCREEN =  "\033[2J";
   private static final String HIDE_CURSOR =  "\033[?25l";
   private static final String SHOW_CURSOR =  "\033[?25h";
-
   // All copied and pasted from ap251/library/TerminallyIll.java
   // Thank you Mr. K!
 
   private static void clear()
-  // Inspired from TerminallIll.java
+  // Inspired from TerminallyIll.java
   // Clears the screen and makes the cursor move to the top left of the terminal
     {
       System.out.println(CLEAR_SCREEN);
@@ -99,7 +98,7 @@ public class Woo {
     clear();
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(hangman.returnDrawing(guessCtr));
-    System.out.println(game.returnArr(game.current));
+    System.out.println(game.returnColoredCurrent());
     System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
     timer.startTimer();
 
@@ -137,7 +136,7 @@ public class Woo {
             timer.stopTimer();
             clear();
             System.out.println(game.returnDrawing(guessCtr));
-            System.out.println(game.returnArr(game.guessArr));
+            System.out.println(game.guess);
             System.out.println("Correct! I'm impressed");
             isABigBoi = true;
             System.out.print("Time: ");
@@ -158,7 +157,7 @@ public class Woo {
             System.out.println(hangman.returnDrawing(guessCtr));
             clear();
             System.out.println(hangman.returnDrawing(guessCtr));
-            System.out.println(game.returnArr(game.current));
+            System.out.println(game.returnColoredCurrent());
             System.out.println("Incorrect...");
             System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
             System.out.println("Would you like to guess the entire phrase? (Y/N): ");
@@ -167,7 +166,7 @@ public class Woo {
         }else if((f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
           clear();
           System.out.println(hangman.returnDrawing(guessCtr));
-          System.out.println(game.returnArr(game.current));
+          System.out.println(game.returnColoredCurrent());
           System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
         }else{
           System.out.println("We'll take that as a no");
@@ -187,7 +186,7 @@ public class Woo {
         q = guess.next().charAt(0);
         p = game.find(q);
 
-        if ( (game.returnArr(wrongGuesses).indexOf(q) > -1) || (game.returnArr(game.current).indexOf(q) > -1) ) {
+        if ( (game.returnArr(wrongGuesses).indexOf(q) > -1) || (game.returnColoredCurrent().indexOf(q) > -1) ) {
           test = true;
         }
         else if (p.size()==0){
@@ -196,7 +195,7 @@ public class Woo {
           clear();
           System.out.println(hangman.returnDrawing(guessCtr));
           System.out.println("Incorrect...");
-          System.out.println(game.returnArr(game.current));
+          System.out.println(game.returnColoredCurrent());
           System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
           break;
         }
@@ -207,7 +206,7 @@ public class Woo {
 
         clear();
         System.out.println(hangman.returnDrawing(guessCtr));
-        System.out.println(game.returnArr(game.current));
+        System.out.println(game.returnColoredCurrent());
         if (test == true) {
           System.out.println("You have already guessed this letter!");
           System.out.println("Don't think we wouldn't catch you slippin'!");

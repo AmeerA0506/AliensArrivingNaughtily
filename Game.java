@@ -10,10 +10,10 @@ public class Game extends Hangman{
   private static final int DARK = 2;
   private static final int ITALICS = 3;
   private static final int BLACK = 30;
-  private static final int BLUE = 34;
-  private static final int GREEN = 32;
   private static final int RED = 31;
+  private static final int GREEN = 32;
   private static final int YELLOW = 33;
+  private static final int BLUE = 34;
   private static final int MAGENTA = 35;
   private static final int CYAN = 36;
   private static final int WHITE = 37;
@@ -25,6 +25,17 @@ public class Game extends Hangman{
   String guess;
   List<Character> guessArr = new ArrayList<Character>();
   List<Character> current = new ArrayList<Character>();
+
+  private static String color(int x){
+    String output = "";
+    output += "\u001B[" + x + "m";
+    return output;
+  }
+
+  private static String color(int a, int b)
+  {
+    return ("\033[0;" + a+ ";" + b + "m");
+  }
 
   private static void wait(int millis)
   {
@@ -95,13 +106,13 @@ public class Game extends Hangman{
     }
 
     public ArrayList<Integer> find(Character target){
-      ArrayList<Integer> indicies = new ArrayList<Integer>(); // will store indicies
+      ArrayList<Integer> indices = new ArrayList<Integer>(); // will store indicies
       for(int i = 0; i < guessArr.size(); i++){
         if(guessArr.get(i).equals(target)||guessArr.get(i).equals(Character.toUpperCase(target))){
-          indicies.add(i);
+          indices.add(i);
         }
       }
-      return indicies;
+      return indices;
     }
 
     public String returnArr(List<Character> input){
@@ -129,6 +140,22 @@ public class Game extends Hangman{
         arr.remove(" ");
       }
       System.out.println(arr);
+    }
+
+    public String returnColoredCurrent(){
+      String currentString = "";
+      String output = "";
+      for(char c : current){
+        currentString += c;
+      }
+      for(int i = 0; i<currentString.length(); i++){
+        if(currentString.charAt(i) == 95){
+          output = output + color(WHITE) + currentString.charAt(i);
+        }else{
+          output = output + color(GREEN) + currentString.charAt(i);
+        }
+        }
+      return output + color(WHITE);
     }
 
 }// end class
