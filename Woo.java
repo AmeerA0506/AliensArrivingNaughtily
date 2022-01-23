@@ -156,7 +156,7 @@ public class Woo {
       while (bigBoiGuess.hasNextLine()){
         f=bigBoiGuess.nextLine();
         if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
-          System.out.print("Feeling "+game.color(GREEN)+"lucky"+game.color(WHITE)+" I see? Enter your guess here:");
+          System.out.print("Feeling "+game.color(GREEN)+"lucky"+game.color(WHITE)+" I see? Enter your guess here: ");
           f=bigBoiGuess.nextLine();
           for(char c: f.toCharArray()){
              phraseGuess.add(c);
@@ -175,13 +175,15 @@ public class Woo {
             guessCtr+=1;
             phraseGuess.clear();
             if(guessCtr == 6){
+              // end the game
               clear();
               System.out.println(hangman.returnDrawing(guessCtr));
               timer.stopTimer();
+              System.out.print("Time: " + game.color(BLUE));
               timer.printSimplifiedTime(timer.getTimeElapsed());
-              System.out.println("You have run out of guesses :(");
-              System.out.println("Better luck next time!");
-              System.out.println("The phrase was " + game.guess);
+              System.out.println("\n" + game.color(RED) + "You have run out of guesses :(" + game.color(WHITE));
+              System.out.println(game.color(GREEN) + "Better luck next time!" + game.color(WHITE));
+              System.out.println("The phrase was " + game.color(YELLOW)+ game.guess);
               return;
             }
             System.out.println(hangman.returnDrawing(guessCtr));
