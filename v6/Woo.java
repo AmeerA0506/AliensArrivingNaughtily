@@ -59,8 +59,8 @@ public class Woo {
       System.out.println("This project was created by "+game.color(GREEN)+"Nakib Abedin, "+game.color(BLUE)+"Ameer Alnasser, "+game.color(WHITE)+"and"+game.color(MAGENTA)+" Alif Rahman"+game.color(WHITE));
       System.out.println("Before we get started, you should know how this game works: \n");
       System.out.println("0. There are 3 sets of difficulties. After a few incorrect guesses, you will get a hint telling you the theme.");
-      System.out.println("1. There is also a customizable mode in which you can input a variety of phrases. The word that you will be guessing will be randomly selected from these inputs");
-      System.out.println("2. For any input you make, we will use the first character");
+      System.out.println("1. There is also a customizable mode in which you can input a variety of phrases. The word that you will be guessing will be randomly selected from these inputs.");
+      System.out.println("2. For any input you make, we will use the first character.");
       System.out.println("3. You are not allowed to guess one character more than once.");
       System.out.println("4. After six incorrect guesses, the game will end.");
       System.out.println("5. You will see the amount of time you spent on the game at the end of the program.");
@@ -73,12 +73,11 @@ public class Woo {
 
     if(startPlaying.hasNextLine()){
       clear();
-      System.out.println("Select your difficulty:");
       System.out.println(game.color(GREEN) + "0-1: Easy");
       System.out.println(game.color(YELLOW)+"2-3: Medium");
       System.out.println(game.color(RED)+"4-5: Difficult");
       System.out.println(game.color(CYAN)+"6: Custom");
-  //    System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
+      System.out.print(game.color(WHITE)+"Select your difficulty: ");
     }
 
     Scanner sc = new Scanner(System.in);

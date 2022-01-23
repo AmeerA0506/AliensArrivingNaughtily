@@ -2,10 +2,10 @@ public class Hangman {
   private static final String stage0 = "____________\n|/   | \n|    |\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|___________";
   private static final String stage1 = "____________\n|/   | \n|    |\n|   (_)\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|___________";
   private static final String stage2 = "____________\n|/   | \n|    |\n|   (_)\n|    | \n|    |\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
-  private static final String stage3 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | \n|   \\|\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
-  private static final String stage4 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________";
-  private static final String stage5 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \n|  /   \n|\n|\n|\n|___________";
-  private static final String stage6 = "____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \\\n|  /   \\\n|\n|\n|\n|___________";
+  private static final String stage3 = "\u001b[33m____________\n|/   | \n|    |\n|   (_)\n|  \\ | \n|   \\|\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________\u001b[37m";
+  private static final String stage4 = "\u001b[33m____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|\n|\n|\n|\n|\n|___________\u001b[37m";
+  private static final String stage5 = "\u001b[31m____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \n|  /   \n|\n|\n|\n|___________\u001b[37m";
+  private static final String stage6 = "\u001b[31m____________\n|/   | \n|    |\n|   (_)\n|  \\ | /\n|   \\|/\n|    |\n|    |\n|   / \\\n|  /   \\\n|\n|\n|\n|___________\u001b[37m";
 
   public String returnDrawing (int x) {
     String answer = "";
