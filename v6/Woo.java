@@ -1,24 +1,16 @@
 // AliensArrivingNaughtily -- Ameer Alnasser + Nakib Abedin + Alif Rahman
 // APCS pd06
 // FP - (Don't) Hang da Man
-// 2022-01-20r
-// time spent: 15 hrs
+// 2022-01-24m
+// time spent: 25 hrs
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import org.w3c.dom.ls.LSException;
-
 import java.util.List;
 
 public class Woo {
 
-  // // terminal hax
-  // private static final int BRIGHT = 1;
-  // private static final int DARK = 2;
-  // private static final int ITALICS = 3;
-  // private static final int BLACK = 30;
   private static final int RED = 31;
   private static final int GREEN = 32;
   private static final int YELLOW = 33;
@@ -30,7 +22,7 @@ public class Woo {
   private static final String HIDE_CURSOR =  "\033[?25l";
   private static final String SHOW_CURSOR =  "\033[?25h";
   // All copied and pasted from ap251/library/TerminallyIll.java
-  // Thank you Mr. K!
+  // Thank you SK and TM
 
   private static void clear()
   // Inspired from TerminallyIll.java
@@ -87,7 +79,7 @@ public class Woo {
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
           game.populate("inputs/StuyAndAround.in");
-          hint="Near or in Stuyvesant";
+          hint="Places near or in Stuyvesant";
           break;
       case 1:
           game.populate("inputs/Thinkeren.in");
@@ -134,12 +126,13 @@ public class Woo {
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
-    String f="";
-    List<Character> phraseGuess = new ArrayList<Character>();
-    boolean isABigBoi = false;
+    String f=""; //used to populate phraseGuess if the user chooses to guess the entire phrase
+    List<Character> phraseGuess = new ArrayList<Character>(); // this will store the phrase guessed by the user
+    boolean isABigBoi = false; // this is used to break out of the while loop if they 
 
     while(! (game.guessArr.equals(game.current)) ){
       if(guessCtr==6){
+        // end the game
         clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         timer.stopTimer();
@@ -150,9 +143,15 @@ public class Woo {
         System.out.println("The phrase was " + game.color(YELLOW)+ game.guess);
         return;
       }
+      if(guessCtr >= 3 && category != 6){
+        // give a hint
+        System.out.println("\nLooks like you are a little stuck. Here is a hint:");
+        System.out.println("The phrase has something to do with " + game.color(CYAN)+ hint + game.color(WHITE) + "\n");
+      }
 
       System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
-      Scanner bigBoiGuess = new Scanner(System.in);
+      Scanner bigBoiGuess = new Scanner(System.in);//scanner used to determine if the user wants to guess the whole thing
+      // give option to gues the whole thing
 
       while (bigBoiGuess.hasNextLine()){
         f=bigBoiGuess.nextLine();
@@ -189,7 +188,7 @@ public class Woo {
             clear();
             System.out.println(hangman.returnDrawing(guessCtr));
             System.out.println(game.returnColoredCurrent());
-            System.out.println("Incorrect...");
+            System.out.println("Wrong...");
             System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
             System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
             continue;
@@ -225,7 +224,7 @@ public class Woo {
           wrongGuesses.add(q);
           clear();
           System.out.println(hangman.returnDrawing(guessCtr));
-          System.out.println("Incorrect...");
+          System.out.println("Wrong...");
           System.out.println(game.returnColoredCurrent());
           System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
           break;
