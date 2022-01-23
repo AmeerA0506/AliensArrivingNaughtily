@@ -27,7 +27,6 @@ UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We want to add a leaderboard but this seems a little implausible because in order for the leaderboard to be accurate, the user would have to push their changes. Otherwise, the leaderboard would only be local but that doesn't seem like it is very useful.
 We want the background color of the terminal to change colors to improve aesthetics, but we are not pleased by the colors available. Are there any other ways to change the background color?
-Have an option to play again?
 Should we ask the user if they want to guess every single time or should we give them an input which they can use to indicate when they want to guess.
 We should clean up our code in Woo. The code starts off pretty readable but slowly digresses into chaos. It is hard for anyone to follow along so maybe we should split it up into different helper methods.
 "Exception in thread "main" java.lang.IllegalAccessError:" Sometimes we get this error. However, for the majority of the time, we don't get this error. We are still a little confused about this but after consulting fellow thinker David Chen of Period 7 APCS, we think that removing the class files before recomipling fixes the issue.
@@ -99,9 +98,14 @@ Alif Rahman :: Fixed a bug where nothing showed up after incorrect guesses. Drov
 
 2022-01-21
 --------------------------------------------------------------
-Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess. Helped drive v6 --> located another bug. Added a loading screen effect to the inital screen.
-Ameer Alnasser :: Helped drive v6 --> located bug.
-Alif Rahman :: Drove v6 in class --> fixed repeated guesses. 
+Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess. Located a bug. Added a loading screen effect to the inital screen.
+Ameer Alnasser :: Helped locate bug.
+Alif Rahman :: Drove session in class --> fixed repeated guesses. 
 
+2022-01-22
+--------------------------------------------------------------
+Nakib Abedin :: Drove parts of v6. Added more decorations. Added difficulty selection screen. Updated README.md and devlog.
+Ameer Alnasser :: Drove parts of v6. Added more inputs. Updated flowchart
+Alif Rahman :: Drove parts of v6. 
 
 ==============================================================

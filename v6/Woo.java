@@ -7,6 +7,9 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.w3c.dom.ls.LSException;
+
 import java.util.List;
 
 public class Woo {
@@ -20,8 +23,8 @@ public class Woo {
   private static final int GREEN = 32;
   private static final int YELLOW = 33;
   private static final int BLUE = 34;
-  // private static final int MAGENTA = 35;
-  // private static final int CYAN = 36;
+  private static final int MAGENTA = 35;
+  private static final int CYAN = 36;
   private static final int WHITE = 37;
   private static final String CLEAR_SCREEN =  "\033[2J";
   private static final String HIDE_CURSOR =  "\033[?25l";
@@ -52,35 +55,36 @@ public class Woo {
 
     if (enter.hasNextLine()){
       clear();
-      System.out.println("Welcome to Don't Hang da Man!");
-      System.out.println("This project was created by Nakib Abedin, Ameer Alnasser, and Alif Rahman");
-      System.out.println("Before we get started, you should know how this game works works: ");
+      System.out.println(game.color(YELLOW)+"Welcome"+game.color(WHITE)+" to "+game.color(RED)+"DON'T"+game.color(WHITE)+" Hang da Man!");
+      System.out.println("This project was created by "+game.color(GREEN)+"Nakib Abedin, "+game.color(BLUE)+"Ameer Alnasser, "+game.color(WHITE)+"and"+game.color(MAGENTA)+" Alif Rahman"+game.color(WHITE));
+      System.out.println("Before we get started, you should know how this game works: \n");
       System.out.println("0. There are 3 sets of difficulties. After a few incorrect guesses, you will get a hint telling you the theme.");
-      System.out.println("1. For any input you make, we will use the first character");
-      System.out.println("2. You are not allowed to guess one character more than once.");
-      System.out.println("3. After six incorrect guesses, the game will end.");
-      System.out.println("4. You will see the amount of time you spent on the game at the end of the program.");
-      System.out.println("\nGreat! Now that we know how it works, let's get playin'");
+      System.out.println("1. There is also a customizable mode in which you can input a variety of phrases. The word that you will be guessing will be randomly selected from these inputs");
+      System.out.println("2. For any input you make, we will use the first character");
+      System.out.println("3. You are not allowed to guess one character more than once.");
+      System.out.println("4. After six incorrect guesses, the game will end.");
+      System.out.println("5. You will see the amount of time you spent on the game at the end of the program.");
+      System.out.println(game.color(GREEN)+"\nGreat! "+game.color(WHITE)+"Now that we know how it works, let's get"+game.color(YELLOW)+" playin'"+game.color(WHITE));
 
-      System.out.println("Press Enter to continue");
+      System.out.println("Press "+game.color(CYAN)+"Enter"+game.color(WHITE)+" to continue");
     }
 
     Scanner startPlaying = new Scanner(System.in);
 
     if(startPlaying.hasNextLine()){
       clear();
-      System.out.println("Welcome to Dont Hang da Man!");
       System.out.println("Select your difficulty:");
-      System.out.println("0-1: Easy");
-      System.out.println("2-3: Medium");
-      System.out.println("4-5: Difficult");
-      System.out.println("6: Custom");
+      System.out.println(game.color(GREEN) + "0-1: Easy");
+      System.out.println(game.color(YELLOW)+"2-3: Medium");
+      System.out.println(game.color(RED)+"4-5: Difficult");
+      System.out.println(game.color(CYAN)+"6: Custom");
   //    System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
     }
 
     Scanner sc = new Scanner(System.in);
     String hint="";
     int category = sc.nextInt();
+    
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
           game.populate("inputs/StuyAndAround.in");
