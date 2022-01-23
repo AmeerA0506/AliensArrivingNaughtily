@@ -50,7 +50,24 @@ public class Woo {
 
     Scanner enter = new Scanner(System.in); // Init Scanner to take in input for categories
 
-    if(enter.hasNextLine()){
+    if (enter.hasNextLine()){
+      clear();
+      System.out.println("Welcome to Don't Hang da Man!");
+      System.out.println("This project was created by Nakib Abedin, Ameer Alnasser, and Alif Rahman");
+      System.out.println("Before we get started, you should know how this game works works: ");
+      System.out.println("0. There are 3 sets of difficulties. After a few incorrect guesses, you will get a hint telling you the theme.");
+      System.out.println("1. For any input you make, we will use the first character");
+      System.out.println("2. You are not allowed to guess one character more than once.");
+      System.out.println("3. After six incorrect guesses, the game will end.");
+      System.out.println("4. You will see the amount of time you spent on the game at the end of the program.");
+      System.out.println("\nGreat! Now that we know how it works, let's get playin'");
+
+      System.out.println("Press Enter to continue");
+    }
+
+    Scanner startPlaying = new Scanner(System.in);
+
+    if(startPlaying.hasNextLine()){
       clear();
       System.out.println("Welcome to Dont Hang da Man!");
       System.out.println("Select your difficulty:");
