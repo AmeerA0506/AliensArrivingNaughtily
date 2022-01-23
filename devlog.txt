@@ -105,7 +105,7 @@ Alif Rahman :: Drove session in class --> fixed repeated guesses.
 2022-01-22
 --------------------------------------------------------------
 Nakib Abedin :: Drove parts of v6. Added more decorations. Added difficulty selection screen. Updated README.md and devlog.
-Ameer Alnasser :: Drove parts of v6. Added more inputs. Updated flowchart
+Ameer Alnasser :: Drove parts of v6. Added more inputs. Updated flowchart.
 Alif Rahman :: Drove parts of v6. 
 
 ==============================================================
