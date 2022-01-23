@@ -39,7 +39,7 @@ For our project, we coded Hangman inside of the terminal. We thought it would be
 
 2. `cd` into the `AliensArrivingNaughtily` directory
 
-3. enter `javac Woo.java`
+3. enter `javac *.java`
 
 4. enter `java Woo`
 
