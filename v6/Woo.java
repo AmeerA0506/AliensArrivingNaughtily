@@ -70,7 +70,7 @@ public class Woo {
           hint="Places";
           break;
       case 1:
-          game.populate("inputs/Celebrities.in");'
+          game.populate("inputs/Celebrities.in");
           hint="Celebrities";
           break;
       case 2:
