@@ -86,8 +86,8 @@ public class Woo {
           hint="Thinkeren from period 6";
           break;
       case 5:
-          game.populate("inputs/Quotes.in");
-          hint=""
+          game.populate("inputs/StuyAndAround.in");
+          hint="Near or in Stuyvesant";
           break;
       case 6:
           clear();
