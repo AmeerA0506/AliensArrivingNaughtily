@@ -150,7 +150,7 @@ public class Woo {
             System.out.println(game.color(YELLOW) + game.guess);
             System.out.println(game.color(GREEN)+"Correct! I'm impressed"+game.color(WHITE));
             isABigBoi = true;
-            System.out.print("Time: ");
+            System.out.print("Time: " + game.color(BLUE));
             timer.printSimplifiedTime(timer.getTimeElapsed());
           }else{
             guessCtr+=1;
@@ -234,7 +234,7 @@ public class Woo {
     System.out.println(game.returnDrawing(guessCtr));
     System.out.println(game.color(YELLOW) + game.guess);
     System.out.println(game.color(GREEN)+"Correct! I'm impressed"+game.color(WHITE));
-    System.out.print("Time: ");
+    System.out.print("Time: " + game.color(BLUE));
     timer.printSimplifiedTime(timer.getTimeElapsed());
   }
   System.out.println(SHOW_CURSOR); // don't want to get sued for making the user's cursor disappear
