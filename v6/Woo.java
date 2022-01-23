@@ -53,11 +53,11 @@ public class Woo {
     if(enter.hasNextLine()){
       clear();
       System.out.println("Welcome to Dont Hang da Man!");
-      System.out.println("Select your difficulty");
-      System.out.println("(0-1: Easy)");
-      System.out.println("(2-3: Medium)");
-      System.out.println("(4-5: Difficult)");
-      System.out.println("(6: Custom)");
+      System.out.println("Select your difficulty:");
+      System.out.println("0-1: Easy");
+      System.out.println("2-3: Medium");
+      System.out.println("4-5: Difficult");
+      System.out.println("6: Custom");
   //    System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
     }
 
@@ -66,28 +66,28 @@ public class Woo {
     int category = sc.nextInt();
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
-          game.populate("inputs/Places.in");
-          hint="Places";
+          game.populate("inputs/StuyAndAround.in");
+          hint="Near or in Stuyvesant";
           break;
       case 1:
-          game.populate("inputs/Celebrities.in");
-          hint="Celebrities";
+          game.populate("inputs/Thinkeren.in");
+          hint="Thinkeren from period 6";
           break;
       case 2:
           game.populate("inputs/Movies.in");
           hint="Movies";
           break;
       case 3:
-          game.populate("inputs/TofrsWords.in");
-          hint="The wise words of Tofr";
+          game.populate("inputs/Celebrities.in");
+          hint="Celebrities";
           break;
       case 4:
-          game.populate("inputs/Thinkeren.in");
-          hint="Thinkeren from period 6";
+          game.populate("inputs/Places.in");
+          hint="Places";
           break;
       case 5:
-          game.populate("inputs/StuyAndAround.in");
-          hint="Near or in Stuyvesant";
+          game.populate("inputs/TofrsWords.in");
+          hint="The wise words of Tofr";
           break;
       case 6:
           clear();
