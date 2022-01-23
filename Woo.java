@@ -1,8 +1,8 @@
 // AliensArrivingNaughtily -- Ameer Alnasser + Nakib Abedin + Alif Rahman
 // APCS pd06
 // FP - (Don't) Hang da Man
-// 2022-01-20r
-// time spent: 15 hrs
+// 2022-01-24m
+// time spent: 25 hrs
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,23 +11,18 @@ import java.util.List;
 
 public class Woo {
 
-  // // terminal hax
-  // private static final int BRIGHT = 1;
-  // private static final int DARK = 2;
-  // private static final int ITALICS = 3;
-  // private static final int BLACK = 30;
   private static final int RED = 31;
   private static final int GREEN = 32;
   private static final int YELLOW = 33;
   private static final int BLUE = 34;
-  // private static final int MAGENTA = 35;
-  // private static final int CYAN = 36;
+  private static final int MAGENTA = 35;
+  private static final int CYAN = 36;
   private static final int WHITE = 37;
   private static final String CLEAR_SCREEN =  "\033[2J";
   private static final String HIDE_CURSOR =  "\033[?25l";
   private static final String SHOW_CURSOR =  "\033[?25h";
   // All copied and pasted from ap251/library/TerminallyIll.java
-  // Thank you Mr. K!
+  // Thank you SK and TM
 
   private static void clear()
   // Inspired from TerminallyIll.java
@@ -50,34 +45,61 @@ public class Woo {
 
     Scanner enter = new Scanner(System.in); // Init Scanner to take in input for categories
 
-    if(enter.hasNextLine()){
+    if (enter.hasNextLine()){
       clear();
-      System.out.println("Welcome to Dont Hang da Man!");
-      System.out.println("Select your theme");
-      System.out.println("0. Places \n1. Celebrities \n2. Movies \n3. Tofr's Wise Words \n4. Period 6 Thinkeren \n5. Quotes \n6. DIY");
+      System.out.println(game.color(YELLOW)+"Welcome"+game.color(WHITE)+" to "+game.color(RED)+"DON'T"+game.color(WHITE)+" Hang da Man!");
+      System.out.println("This project was created by "+game.color(GREEN)+"Nakib Abedin, "+game.color(BLUE)+"Ameer Alnasser, "+game.color(WHITE)+"and"+game.color(MAGENTA)+" Alif Rahman"+game.color(WHITE));
+      System.out.println("Before we get started, you should know how this game works: \n");
+      System.out.println("0. There are 3 sets of difficulties. After a few incorrect guesses, you will get a hint telling you the theme.");
+      System.out.println("1. There is also a customizable mode in which you can input a variety of phrases. The word that you will be guessing will be randomly selected from these inputs.");
+      System.out.println("2. For any input you make, we will use the first character.");
+      System.out.println("3. You are not allowed to guess one character more than once.");
+      System.out.println("4. After six incorrect guesses, the game will end.");
+      System.out.println("5. You will see the amount of time you spent on the game at the end of the program.");
+      System.out.println(game.color(GREEN)+"\nGreat! "+game.color(WHITE)+"Now that we know how it works, let's get"+game.color(YELLOW)+" playin'"+game.color(WHITE));
+
+      System.out.println("Press "+game.color(CYAN)+"Enter"+game.color(WHITE)+" to continue");
+    }
+
+    Scanner startPlaying = new Scanner(System.in);
+
+    if(startPlaying.hasNextLine()){
+      clear();
+      System.out.println(game.color(GREEN) + "0-1: Easy");
+      System.out.println(game.color(YELLOW)+"2-3: Medium");
+      System.out.println(game.color(RED)+"4-5: Difficult");
+      System.out.println(game.color(CYAN)+"6: Custom");
+      System.out.print(game.color(WHITE)+"Select your difficulty: ");
     }
 
     Scanner sc = new Scanner(System.in);
-
+    String hint="";
     int category = sc.nextInt();
+    
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
-          game.populate("inputs/Places.in");
+          game.populate("inputs/StuyAndAround.in");
+          hint="Places near or in Stuyvesant";
           break;
       case 1:
-          game.populate("inputs/Celebrities.in");
+          game.populate("inputs/Thinkeren.in");
+          hint="Thinkeren from period 6";
           break;
       case 2:
           game.populate("inputs/Movies.in");
+          hint="Movies";
           break;
       case 3:
-          game.populate("inputs/TofrsWords.in");
+          game.populate("inputs/Celebrities.in");
+          hint="Celebrities";
           break;
       case 4:
-          game.populate("inputs/Thinkeren.in");
+          game.populate("inputs/Places.in");
+          hint="Places";
           break;
       case 5:
-          game.populate("inputs/Quotes.in");
+          game.populate("inputs/TofrsWords.in");
+          hint="The wise words of Tofr";
           break;
       case 6:
           clear();
@@ -104,12 +126,13 @@ public class Woo {
 
     char q; // this var will be used for the user input
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
-    String f="";
-    List<Character> phraseGuess = new ArrayList<Character>();
-    boolean isABigBoi = false;
+    String f=""; //used to populate phraseGuess if the user chooses to guess the entire phrase
+    List<Character> phraseGuess = new ArrayList<Character>(); // this will store the phrase guessed by the user
+    boolean isABigBoi = false; // this is used to break out of the while loop if they 
 
     while(! (game.guessArr.equals(game.current)) ){
       if(guessCtr==6){
+        // end the game
         clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         timer.stopTimer();
@@ -120,9 +143,15 @@ public class Woo {
         System.out.println("The phrase was " + game.color(YELLOW)+ game.guess);
         return;
       }
+      if(guessCtr >= 3 && category != 6){
+        // give a hint
+        System.out.println("\nLooks like you are a little stuck. Here is a hint:");
+        System.out.println("The phrase has something to do with " + game.color(CYAN)+ hint + game.color(WHITE) + "\n");
+      }
 
       System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
-      Scanner bigBoiGuess = new Scanner(System.in);
+      Scanner bigBoiGuess = new Scanner(System.in);//scanner used to determine if the user wants to guess the whole thing
+      // give option to gues the whole thing
 
       while (bigBoiGuess.hasNextLine()){
         f=bigBoiGuess.nextLine();
@@ -140,7 +169,7 @@ public class Woo {
             System.out.println(game.color(YELLOW) + game.guess);
             System.out.println(game.color(GREEN)+"Correct! I'm impressed"+game.color(WHITE));
             isABigBoi = true;
-            System.out.print("Time: ");
+            System.out.print("Time: " + game.color(BLUE));
             timer.printSimplifiedTime(timer.getTimeElapsed());
           }else{
             guessCtr+=1;
@@ -159,7 +188,7 @@ public class Woo {
             clear();
             System.out.println(hangman.returnDrawing(guessCtr));
             System.out.println(game.returnColoredCurrent());
-            System.out.println("Incorrect...");
+            System.out.println("Wrong...");
             System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
             System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
             continue;
@@ -195,7 +224,7 @@ public class Woo {
           wrongGuesses.add(q);
           clear();
           System.out.println(hangman.returnDrawing(guessCtr));
-          System.out.println("Incorrect...");
+          System.out.println("Wrong...");
           System.out.println(game.returnColoredCurrent());
           System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
           break;
@@ -217,6 +246,15 @@ public class Woo {
         System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
         break;
       }
+  }
+  if(game.guessArr.equals(game.current)){
+    timer.stopTimer();
+    clear();
+    System.out.println(game.returnDrawing(guessCtr));
+    System.out.println(game.color(YELLOW) + game.guess);
+    System.out.println(game.color(GREEN)+"Correct! I'm impressed"+game.color(WHITE));
+    System.out.print("Time: " + game.color(BLUE));
+    timer.printSimplifiedTime(timer.getTimeElapsed());
   }
   System.out.println(SHOW_CURSOR); // don't want to get sued for making the user's cursor disappear
 

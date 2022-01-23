@@ -1,58 +1,56 @@
 AliensArrivingNaughtily
-Nakib Abedin
-Ameer Alnasser
-Alif Rahman
-pd 6
+Nakib Abedin + Joker
+Ameer Alnasser + TurtleBoi
+Alif Rahman + Grippy
+pd 06
 ---------------------
 (Don’t) Hang da man
-
-
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- How to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal).
-- We had to break in order to exit the scanner while guessing for characters.
-- ANSI styling only needs to be applied once and it will stay for all strings printed out until it gets changed or reset.
-- After a screen is cleared the cursor should be moved to (1,1). This will mean that everything in the terminal is posted on the top left.
-- For our opening Screen, we wanted to hide the cursor in order to improve the aesthetics of the game. However, once we finished playing, we got sent back to the normal terminal prompt line and the cursor still did not reappear. We had to add a line at the end of our code that made the cursor reappear.
-- For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashed in order to have the same effect. This means a the text in our code looks misaligned but it is aligned in the terminal.
-- We overcame issues with case sensitivity using the toUpperCase() method in the Character wrapper class.
-- We fixed a bug where the user was still being prompted to enter a guess even after guessing the entire phrase.
-- Adding timer was very simple with the helper class. We were able to implement it very quickly.
+We learned how to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal). We used the java.io.File module. We needed a try catch statement for a case in which the file was not found.
+After a screen is cleared the cursor should be moved to (1,1). This will mean that everything in the terminal is printed from the top left.
+For our opening Screen, we wanted to hide the cursor in order to improve the aesthetics of the game. However, once we finished playing, we got sent back to the normal command prompt line and the cursor still did not reappear. We had to add a line at the end of our code that made the cursor reappear.
+For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashes in order to have the same effect. This means a the text in our code looks misaligned but it appears normal in the terminal.
+We overcame issues with case sensitivity using the toUpperCase() method in the Character wrapper class.
+We fixed a bug where the user was still being prompted to enter a guess even after guessing the entire phrase. This forced us to revist how break, continue, and return statements worked in the context of exiting loops and functions.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We want to add a leaderboard but this seems a little implausible because in order for the leaderboard to be accurate, the user would have to push their changes. Otherwise, the leaderboard would only be local but that doesn't seem like it is very useful.
-We want the background color of the terminal to change colors to improve aesthetics, but we are not pleased by the colors available. Are there any other ways to change the background color?
-Should we ask the user if they want to guess every single time or should we give them an input which they can use to indicate when they want to guess.
-We should clean up our code in Woo. The code starts off pretty readable but slowly digresses into chaos. It is hard for anyone to follow along so maybe we should split it up into different helper methods.
-"Exception in thread "main" java.lang.IllegalAccessError:" Sometimes we get this error. However, for the majority of the time, we don't get this error. We are still a little confused about this but after consulting fellow thinker David Chen of Period 7 APCS, we think that removing the class files before recomipling fixes the issue.
+"Exception in thread "main" java.lang.IllegalAccessError:" 
+Sometimes we get this exception. This usually happens the first few times we try to execute the code after pulling it from GitHub.
+This usually goes away after we try java Woo two or three times.
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ameer's brother is a pretty good programmer!
-the switch() statement is a good alternative to a chain of else if statement.
+the switch() statement is an alternative to a chain of else if statements.
 char primitives store the ASCII values of the symbol they contain.
 There are ways to customize the terminal (with the resources in TerminallyIll)
-You can clear the terminal using java code by printing out "\033[2J"
-git stash should return you back to the most recent commit. This can be used as a tool to erase all the changes made before pulling.
+We think git stash takes you back to the most recent commit. This can be used as a tool to erase all the changes made locally before pulling.
 The Character wrapper class has its own toUpperCase() method for characters.
-A single word can be classified as a phrase. Nakib didn't know that.
+A single word may constitute a phrase. This helped us tighten up our language while writing the howToPlay section.
+The wait() method from TerminallyIll.java could be used to creating a loading animation.
+It's possible to clear the terminal and refresh to improve the user experience 
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We chose not to implement the leaderboard because it seems a little difficult to implement.
+We chose not to implement the leaderboard because it seems a little difficult to implement. Our idea was that we could put it in a txt file but then the leaderboard would be local and we don't think that it makes much sense to have a local leaderboard.
+We chose not to change the background color in the terminal because the colors didn't look that good to us.
+We chose not to add a `play again` option. 
+We wanted to move everything to the center of the terminal instead of having it appear on the top left. We couldn't think of a good way to implement this so we didn't carry through with the idea.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Always review documentation if you are uncertain about a certain aspect of a tool that you are using.
-Plan thoroughly before executing (aka MMMC)
-We should planned ahead further. We were going one implementation at a time but we found that later implementations got very complicated because our earlier implemenations weren't future proof.
+We should have planned ahead further. We were going one implementation at a time but we found that later implementations got very complicated because our earlier implemenations weren't future proof.
 Make sure to leave comments for yourself in the future. Oftentimes the lack of comments hurts yourself the most.
+Make better variable names. It helps you out when the code gets messy.
 
 
 
@@ -108,4 +106,9 @@ Nakib Abedin :: Drove parts of v6. Added more decorations. Added difficulty sele
 Ameer Alnasser :: Drove parts of v6. Added more inputs. Updated flowchart.
 Alif Rahman :: Drove parts of v6. 
 
+2022-01-23
+--------------------------------------------------------------
+Nakib Abedin :: Updated devlog and README.md. Also put the finishing touches on the code and added more comments to make the code more readable.
+Ameer Alnasser :: Updated flowchart and added more inputs to the file.
+Alif Rahman :: Updated UML diagram to comply with all of our recent developments.
 ==============================================================

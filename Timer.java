@@ -1,3 +1,9 @@
+// AliensArrivingNaughtily -- Ameer Alnasser + Nakib Abedin + Alif Rahman
+// APCS pd06
+// FP - (Don't) Hang da Man
+// 2022-01-24m
+// time spent: 25 hrs
+
 public class Timer{
   // A class to assist us keep track of how long the user played the game.
   private long timeElapsed;
