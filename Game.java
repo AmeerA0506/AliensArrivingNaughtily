@@ -26,7 +26,7 @@ public class Game extends Hangman{
   List<Character> guessArr = new ArrayList<Character>();
   List<Character> current = new ArrayList<Character>();
 
-  private static String color(int x){
+  public String color(int x){
     String output = "";
     output += "\u001B[" + x + "m";
     return output;
@@ -59,8 +59,7 @@ public class Game extends Hangman{
     initScreen.add("\n|   \u001B["+RED+ "m / \\      \u001B["+GREEN+"m |   |,---||   ||   | \u001B["+CYAN+"m   |   |,---| \u001B["+BLUE+"m   | | |,---||   |   \u001B["+WHITE+"m     |");
     initScreen.add("\n|  \u001B["+RED+ "m /   \\     \u001B["+GREEN+"m `   '`---^`   '`---| \u001B["+CYAN+"m   `--' `---^ \u001B["+BLUE+"m   ` ' '`---''   '   \u001B["+WHITE+"m     |");
     initScreen.add("\n|                            \u001B["+GREEN+"m `---'   \u001B["+WHITE+ "m                                      |");
-    initScreen.add("\n|                             Press \u001B["+RED+"mEnter\u001B["+WHITE+"m to Start                          |");
-    initScreen.add("\n|___________________________________________________________________________|");
+    initScreen.add("\n|                             Press \u001B["+RED+"mEnter\u001B["+WHITE+"m to Start                          |\n|___________________________________________________________________________|");
 
     for(String line : initScreen){
       System.out.print(line);
@@ -123,16 +122,16 @@ public class Game extends Hangman{
       return output;
     }
 
-    public String returnWrongGuesses(List<Character> inputArr){
-      String output = "";
-      if(inputArr.size()==0){
-        return output;
-      }
-      for (Character c : inputArr){
-        output = output + c + " ";
-      }
-      return output;
-    }
+    // public String returnWrongGuesses(List<Character> inputArr){
+    //   String output = "";
+    //   if(inputArr.size()==0){
+    //     return output;
+    //   }
+    //   for (Character c : inputArr){
+    //     output = output + c + " ";
+    //   }
+    //   return output;
+    // }
 
     public void clearArray (List<Character> arr){
       for (int i=0; i<arr.size(); i++){
@@ -155,6 +154,21 @@ public class Game extends Hangman{
           output = output + color(GREEN) + currentString.charAt(i);
         }
         }
+      return output + color(WHITE);
+    }
+
+    public String colorWrongGuesses(List<Character> arr){
+      String stringify = "";
+      String output = "";
+      if(arr.size()==0){
+        return output;
+      }
+      for(char c : arr){
+        stringify = stringify + c + " ";
+      }
+      for(int i = 0; i<stringify.length(); i++){
+        output = output + color(RED) + stringify.charAt(i);
+      }
       return output + color(WHITE);
     }
 

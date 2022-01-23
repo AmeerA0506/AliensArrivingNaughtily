@@ -16,13 +16,13 @@ public class Woo {
   // private static final int DARK = 2;
   // private static final int ITALICS = 3;
   // private static final int BLACK = 30;
-  // private static final int RED = 31;
-  // private static final int GREEN = 32;
-  // private static final int YELLOW = 33;
-  // private static final int BLUE = 34;
+  private static final int RED = 31;
+  private static final int GREEN = 32;
+  private static final int YELLOW = 33;
+  private static final int BLUE = 34;
   // private static final int MAGENTA = 35;
   // private static final int CYAN = 36;
-  // private static final int WHITE = 37;
+  private static final int WHITE = 37;
   private static final String CLEAR_SCREEN =  "\033[2J";
   private static final String HIDE_CURSOR =  "\033[?25l";
   private static final String SHOW_CURSOR =  "\033[?25h";
@@ -99,7 +99,7 @@ public class Woo {
     game.addGuess(); // randomly pick the item that the user will be guessing
     System.out.println(hangman.returnDrawing(guessCtr));
     System.out.println(game.returnColoredCurrent());
-    System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
+    System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
     timer.startTimer();
 
     char q; // this var will be used for the user input
@@ -113,20 +113,21 @@ public class Woo {
         clear();
         System.out.println(hangman.returnDrawing(guessCtr));
         timer.stopTimer();
+        System.out.print("Time: " + game.color(BLUE));
         timer.printSimplifiedTime(timer.getTimeElapsed());
-        System.out.println("You have run out of guesses :(");
-        System.out.println("Better luck next time!");
-        System.out.println("The phrase was " + game.guess);
+        System.out.println("\n" + game.color(RED) + "You have run out of guesses :(" + game.color(WHITE));
+        System.out.println(game.color(GREEN) + "Better luck next time!" + game.color(WHITE));
+        System.out.println("The phrase was " + game.color(YELLOW)+ game.guess);
         return;
       }
 
-      System.out.println("Would you like to guess the entire phrase? (Y/N): ");
+      System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
       Scanner bigBoiGuess = new Scanner(System.in);
 
       while (bigBoiGuess.hasNextLine()){
         f=bigBoiGuess.nextLine();
         if((f.toLowerCase().equals("y"))||(f.toLowerCase().equals("yes"))){
-          System.out.println("Feeling lucky I see? Enter your guess here:");
+          System.out.print("Feeling "+game.color(GREEN)+"lucky"+game.color(WHITE)+" I see? Enter your guess here:");
           f=bigBoiGuess.nextLine();
           for(char c: f.toCharArray()){
              phraseGuess.add(c);
@@ -136,8 +137,8 @@ public class Woo {
             timer.stopTimer();
             clear();
             System.out.println(game.returnDrawing(guessCtr));
-            System.out.println(game.guess);
-            System.out.println("Correct! I'm impressed");
+            System.out.println(game.color(YELLOW) + game.guess);
+            System.out.println(game.color(GREEN)+"Correct! I'm impressed"+game.color(WHITE));
             isABigBoi = true;
             System.out.print("Time: ");
             timer.printSimplifiedTime(timer.getTimeElapsed());
@@ -159,15 +160,15 @@ public class Woo {
             System.out.println(hangman.returnDrawing(guessCtr));
             System.out.println(game.returnColoredCurrent());
             System.out.println("Incorrect...");
-            System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
-            System.out.println("Would you like to guess the entire phrase? (Y/N): ");
+            System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
+            System.out.print("Would you like to guess the entire phrase? ("+game.color(GREEN)+"Y/"+game.color(RED)+"N"+game.color(WHITE)+"): ");
             continue;
           }
         }else if((f.toLowerCase().equals("n"))||(f.toLowerCase().equals("no"))){
           clear();
           System.out.println(hangman.returnDrawing(guessCtr));
           System.out.println(game.returnColoredCurrent());
-          System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
+          System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
         }else{
           System.out.println("We'll take that as a no");
         }
@@ -179,7 +180,7 @@ public class Woo {
       }
 
       boolean test = false; // Init to see if user has guessed a letter already
-      System.out.println("Enter your guess: ");
+      System.out.print("Enter your guess: ");
       Scanner guess = new Scanner(System.in);
 
       while(guess.hasNextLine()){
@@ -196,7 +197,7 @@ public class Woo {
           System.out.println(hangman.returnDrawing(guessCtr));
           System.out.println("Incorrect...");
           System.out.println(game.returnColoredCurrent());
-          System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
+          System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
           break;
         }
 
@@ -213,7 +214,7 @@ public class Woo {
           System.out.println("Please try again : ^ )");
           test = false;
         }
-        System.out.println("Incorrect Guesses: " + game.returnWrongGuesses(wrongGuesses));
+        System.out.println("Incorrect Guesses: " + game.colorWrongGuesses(wrongGuesses));
         break;
       }
   }
