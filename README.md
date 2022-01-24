@@ -33,7 +33,7 @@ For our project, we coded Hangman inside of the terminal. We thought it would be
 * `try` and `catch` statments
 
 ## How to Launch?
-0. Open up a terminal (Use a UNIX-based terminal for an optimized experience)
+0. Open up a terminal (Use a terminal that supports Unicode for optimal experience)
 
 1. git clone `git@github.com:AmeerA0506/AliensArrivingNaughtily.git`
 
