@@ -14,7 +14,7 @@ OBSTACLES OVERCOME
 We learned how to use Scanners in order to extract inputs from separate files. We populated an arrayList with inputs directly from another file (without using the "<" command in the terminal). We used the java.io.File module. We needed a try catch statement for a case in which the file was not found.
 After a screen is cleared the cursor should be moved to (1,1). This will mean that everything in the terminal is printed from the top left.
 For our opening Screen, we wanted to hide the cursor in order to improve the aesthetics of the game. However, once we finished playing, we got sent back to the normal command prompt line and the cursor still did not reappear. We had to add a line at the end of our code that made the cursor reappear.
-For the ASCII art with the hangman, the string interpreted even backslash as an exit statement. We had to put two backslashes in order to have the same effect. This means a the text in our code looks misaligned but it appears normal in the terminal.
+For the ASCII art with the hangman, the string interpreted every backslash as an exit statement. We had to put two backslashes in order to have the same effect. This means a the text in our code looks misaligned but it appears normal in the terminal.
 We overcame issues with case sensitivity using the toUpperCase() method in the Character wrapper class.
 We fixed a bug where the user was still being prompted to enter a guess even after guessing the entire phrase. This forced us to revist how break, continue, and return statements worked in the context of exiting loops and functions.
 
