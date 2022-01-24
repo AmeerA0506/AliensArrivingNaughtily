@@ -75,7 +75,7 @@ public class Woo {
     Scanner sc = new Scanner(System.in);
     String hint="";
     int category = sc.nextInt();
-    
+
     switch(category){ //Inspired by Stuy alumnus and current Cornell TA, aka Ameer's brother
       case 0:
           game.populate("inputs/StuyAndAround.in");
@@ -128,7 +128,7 @@ public class Woo {
     ArrayList<Integer> p = new ArrayList<Integer>(); // this var will be used to find every index of q in the word being guessed
     String f=""; //used to populate phraseGuess if the user chooses to guess the entire phrase
     List<Character> phraseGuess = new ArrayList<Character>(); // this will store the phrase guessed by the user
-    boolean isABigBoi = false; // this is used to break out of the while loop if they 
+    boolean isABigBoi = false; // this is used to break out of the while loop if they
 
     while(! (game.guessArr.equals(game.current)) ){
       if(guessCtr==6){
@@ -218,7 +218,7 @@ public class Woo {
         q = guess.next().charAt(0);
         p = game.find(q);
 
-        if ( (game.returnArr(wrongGuesses).indexOf(q) > -1) || (game.returnColoredCurrent().indexOf(q) > -1) ) {
+        if ( (game.returnArr(wrongGuesses).toLowerCase().indexOf(Character.toLowerCase(q)) > -1) || (game.returnArr(game.current).toLowerCase().indexOf(Character.toLowerCase(q)) > -1) ) {
           test = true;
         }
         else if (p.size()==0){

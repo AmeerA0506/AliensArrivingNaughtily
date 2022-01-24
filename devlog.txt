@@ -20,7 +20,7 @@ We fixed a bug where the user was still being prompted to enter a guess even aft
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"Exception in thread "main" java.lang.IllegalAccessError:" 
+"Exception in thread "main" java.lang.IllegalAccessError:"
 Sometimes we get this exception. This usually happens the first few times we try to execute the code after pulling it from GitHub.
 This usually goes away after we try java Woo two or three times.
 
@@ -35,14 +35,14 @@ We think git stash takes you back to the most recent commit. This can be used as
 The Character wrapper class has its own toUpperCase() method for characters.
 A single word may constitute a phrase. This helped us tighten up our language while writing the howToPlay section.
 The wait() method from TerminallyIll.java could be used to creating a loading animation.
-It's possible to clear the terminal and refresh to improve the user experience 
+It's possible to clear the terminal and refresh to improve the user experience
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We chose not to implement the leaderboard because it seems a little difficult to implement. Our idea was that we could put it in a txt file but then the leaderboard would be local and we don't think that it makes much sense to have a local leaderboard.
 We chose not to change the background color in the terminal because the colors didn't look that good to us.
-We chose not to add a `play again` option. 
+We chose not to add a `play again` option.
 We wanted to move everything to the center of the terminal instead of having it appear on the top left. We couldn't think of a good way to implement this so we didn't carry through with the idea.
 
 LESSONS LEARNED
@@ -98,7 +98,7 @@ Alif Rahman :: Fixed a bug where nothing showed up after incorrect guesses. Drov
 --------------------------------------------------------------
 Nakib Abedin :: Fixed bug where the game was unable to register correct guesses after one incorrect guess. Located a bug. Added a loading screen effect to the inital screen.
 Ameer Alnasser :: Helped locate bug.
-Alif Rahman :: Drove session in class --> fixed repeated guesses. 
+Alif Rahman :: Drove session in class --> fixed repeated guesses.
 
 2022-01-22
 --------------------------------------------------------------
@@ -111,4 +111,9 @@ Alif Rahman :: Drove parts of v6. Fixed minor bugs.
 Nakib Abedin :: Updated devlog and README.md. Also put the finishing touches on the code and added more comments to make the code more readable.
 Ameer Alnasser :: Updated flowchart and finished adding possible inputs.
 Alif Rahman :: Updated UML diagram to comply with all of our recent developments
+
+2022-01-24
+--------------------------------------------------------------
+Nakib Abedin :: Fixed bug we found last-minute while showing our friends our project. 
+
 ==============================================================
