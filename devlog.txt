@@ -109,6 +109,6 @@ Alif Rahman :: Drove parts of v6. Fixed minor bugs.
 2022-01-23
 --------------------------------------------------------------
 Nakib Abedin :: Updated devlog and README.md. Also put the finishing touches on the code and added more comments to make the code more readable.
-Ameer Alnasser :: Updated flowchart and added more inputs to the file.
-Alif Rahman :: Updated UML diagram to comply with all of our recent developments and added more inputs to the file.
+Ameer Alnasser :: Updated flowchart and finished adding possible inputs.
+Alif Rahman :: Updated UML diagram to comply with all of our recent developments
 ==============================================================
