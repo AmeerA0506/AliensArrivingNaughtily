@@ -74,7 +74,7 @@ Alif Rahman :: Came up with the idea of different categories. Drove Woo.java imp
 --------------------------------------------------------------
 Nakib Abedin :: Created and wrote v0 of the code.
 Ameer Alnasser :: Drove v1 of the code. Implemented the switch statement, which helped optimize code. Realized that ArrayList would be our best bet since Strings are not mutable while ArrayLists did not need a set size and as a result we could change the elements that we please.
-Alif Rahman :: added inputs to input.
+Alif Rahman :: Added inputs to input. Helped drive v1.
 
 2022-01-18
 --------------------------------------------------------------
@@ -104,11 +104,11 @@ Alif Rahman :: Drove session in class --> fixed repeated guesses.
 --------------------------------------------------------------
 Nakib Abedin :: Drove parts of v6. Added more decorations. Added difficulty selection screen. Updated README.md and devlog.
 Ameer Alnasser :: Drove parts of v6. Added more inputs. Updated flowchart.
-Alif Rahman :: Drove parts of v6. 
+Alif Rahman :: Drove parts of v6. Fixed minor bugs.
 
 2022-01-23
 --------------------------------------------------------------
 Nakib Abedin :: Updated devlog and README.md. Also put the finishing touches on the code and added more comments to make the code more readable.
 Ameer Alnasser :: Updated flowchart and added more inputs to the file.
-Alif Rahman :: Updated UML diagram to comply with all of our recent developments.
+Alif Rahman :: Updated UML diagram to comply with all of our recent developments and added more inputs to the file.
 ==============================================================
